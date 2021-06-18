@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 import bbqImage from "../../../public/bbqplaceholder.png";
 
-const ViewRecommendation = () => {
+const ViewRec = () => {
   return (
     <div>
       <a href="backapage">Back to Profile</a>
