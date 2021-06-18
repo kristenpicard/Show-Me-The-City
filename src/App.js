@@ -1,17 +1,19 @@
 import React from "react";
-import Login from "../src/components/Login/Login";
-var isLoggedIn = false;
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Login from "./pages/Login";
 
-const currentTime = new Date(2019, 11, 1, 9).getHours();
-console.log(currentTime);
 
 function App() {
   return (
-    <div className="container">
-      {/*Ternary Operator*/}
-      {isLoggedIn ? <h1>Hello</h1> : <Login />}
-      {/*AND Operator*/}
-      {currentTime > 12 && <h1>Why are you still working?</h1>}
+    <div>
+      <Router>
+        <div>
+          <Switch>
+            {/* <Route exact path="/" component={Home} /> */}
+            <Route exact path="/login" component={Login} />
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
 }
