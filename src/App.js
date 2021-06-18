@@ -4,8 +4,8 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Landing from "./pages/Landing";
 import Profile from "./pages/Profile";
-import Create from "./pages/Create";
-import Edit from "./pages/edit";
+import Create from "./pages/CreateRec";
+import Edit from "./pages/EditRec";
 import ViewRecommendation from "./pages/ViewRecommenation";
 import ViewFavorite from "./pages/ViewFavorite";
 
