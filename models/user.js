@@ -35,6 +35,13 @@ const UserSchema = new Schema({
     },
   ],
 
+  faves: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Recs",
+    },
+  ],
+
   fullName: String,
 });
 
