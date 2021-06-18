@@ -1,5 +1,5 @@
 import React from "react";
-import Input from "./Input";
+import Input from "../../components/Input/Input";
 
 function Login() {
   return (
