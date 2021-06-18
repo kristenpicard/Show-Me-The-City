@@ -6,7 +6,7 @@ import Landing from "./pages/Landing";
 import Profile from "./pages/Profile";
 import Create from "./pages/CreateRec";
 import Edit from "./pages/EditRec";
-import ViewRecommendation from "./pages/ViewRecommenation";
+import ViewRec from "./pages/ViewRec";
 import ViewFavorite from "./pages/ViewFavorite";
 
 
@@ -25,7 +25,7 @@ function App() {
             <Route exact path="/profile" component={Profile} />
             <Route path="/create" component={Create} />
             <Route path="/edit" component={Edit} />
-            <Route path="/view-recommendation" component={ViewRecommendation} />
+            <Route path="/view-recommendation" component={ViewRec} />
             <Route path="/view-favorite" component={ViewFavorite} />
           </Switch>
         </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import bbqImage from "../../../public/bbqplaceholder.png";
+import bbqImage from "../images/bbqplaceholder.png";
 
 const ViewFavorite = () => {
   return (
