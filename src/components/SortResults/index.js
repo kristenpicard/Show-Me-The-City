@@ -8,14 +8,14 @@ const SortResults = () => {
                     Categories
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Arts & Culture</a>
-                    <a class="dropdown-item" href="#">Bars</a>
-                    <a class="dropdown-item" href="#">Cinema</a>
-                    <a class="dropdown-item" href="#">Coffee & Tea</a>
-                    <a class="dropdown-item" href="#">Music</a>
-                    <a class="dropdown-item" href="#">Landmarks</a>
-                    <a class="dropdown-item" href="#">Restaurants</a>
-                    <a class="dropdown-item" href="#">Shopping</a>
+                    <a class="dropdown-item" href="/">Arts & Culture</a>
+                    <a class="dropdown-item" href="/">Bars</a>
+                    <a class="dropdown-item" href="/">Cinema</a>
+                    <a class="dropdown-item" href="/">Coffee & Tea</a>
+                    <a class="dropdown-item" href="/">Music</a>
+                    <a class="dropdown-item" href="/">Landmarks</a>
+                    <a class="dropdown-item" href="/">Restaurants</a>
+                    <a class="dropdown-item" href="/">Shopping</a>
                 </div>
             </div>
 
@@ -24,9 +24,9 @@ const SortResults = () => {
                     Rating
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">{`< 100`}</a>
-                    <a class="dropdown-item" href="#">{`< 250`}</a>
-                    <a class="dropdown-item" href="#">{`> 500`}</a>
+                    <a class="dropdown-item" href="/">{`< 100`}</a>
+                    <a class="dropdown-item" href="/">{`< 250`}</a>
+                    <a class="dropdown-item" href="/">{`> 500`}</a>
                 </div>
             </div>
         </>
