@@ -93,7 +93,7 @@ export default class Register extends Component {
           <input
             type="password"
             name="password_confirmation"
-            placeholder="Password confirmation"
+            placeholder="Confirm Password"
             value={this.state.password_confirmation}
             onChange={this.handleChange}
             required
