@@ -1,5 +1,6 @@
 import React from "react";
-import Login from "../components/Login/index"
+import Login from "../components/auth/Login";
+import Register from "../components/auth/Register";
 
 var isLoggedIn = false;
 
@@ -11,6 +12,7 @@ const LoginPage = () => {
     <div className="container">
       {/*Ternary Operator*/}
       {isLoggedIn ? <h1>Hello</h1> : <Login />}
+      <Register />
       {/*AND Operator*/}
       {currentTime > 12 && <h1>Why are you still working?</h1>}
     </div>
