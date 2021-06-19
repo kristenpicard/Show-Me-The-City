@@ -6,7 +6,7 @@ export default class Login extends Component {
     super(props);
 
     this.state = {
-      username: "",
+      email: "",
       password: "",
       loginErrors: "",
     };
@@ -22,14 +22,14 @@ export default class Login extends Component {
   }
 
   handleSubmit(event) {
-    const { username, password } = this.state;
+    const { email, password } = this.state;
 
     axios
       .post(
         "http://localhost:3000/sessions",
         {
           user: {
-            username: username,
+            email: email,
             password: password,
           },
         },
@@ -51,10 +51,10 @@ export default class Login extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <input
-            type="username"
-            name="username"
-            placeholder="Username"
-            value={this.state.username}
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={this.state.email}
             onChange={this.handleChange}
             required
           />
