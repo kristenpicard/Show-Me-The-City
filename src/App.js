@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Login from "./pages/Login";
-// import Home from "./pages/Home";
+import Home from "./pages/Home";
 import Landing from "./pages/Landing";
 import Profile from "./pages/Profile";
 import Create from "./pages/CreateRec";
@@ -21,7 +21,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/login" component={Login} />
-            {/* <Route exact path="/home" component={Home} /> */}
+            <Route exact path="/home" component={Home} />
             <Route exact path="/profile" component={Profile} />
             <Route path="/create" component={Create} />
             <Route path="/edit" component={Edit} />
