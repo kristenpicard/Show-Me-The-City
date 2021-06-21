@@ -1,10 +1,12 @@
 import React from "react";
 // import "./style.css";
 import bbqImage from "../images/bbqplaceholder.png";
+import { GeneralContainer } from "../components/styling/style";
+
 
 const ViewRec = () => {
   return (
-    <div>
+    <GeneralContainer>
       <a href="backapage">Back to Profile</a>
       <img src={bbqImage} alt="bbq"></img>
       <h1>Best BBQ!</h1>
@@ -28,7 +30,7 @@ const ViewRec = () => {
       </ul>
       <button>Edit</button>
       <button>Delete</button>
-    </div>
+    </GeneralContainer>
   );
 };
 

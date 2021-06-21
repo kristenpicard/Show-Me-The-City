@@ -1,10 +1,12 @@
 import React from "react";
 // import "./style.css";
 import bbqImage from "../images/bbqplaceholder.png";
+import { GeneralContainer } from "../components/styling/style";
+
 
 const ViewFavorite = () => {
   return (
-    <div>
+    <GeneralContainer>
       <a href="backapage">Back to Profile</a>
       <img src={bbqImage} alt="bbq"></img>
       <h1>Best BBQ!</h1>
@@ -27,7 +29,7 @@ const ViewFavorite = () => {
         <li>10. consectetur adipiscing elit</li>
       </ul>
       <button>Share</button>
-    </div>
+    </GeneralContainer>
   );
 };
 
