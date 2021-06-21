@@ -1,14 +1,16 @@
 import React from "react";
 import EditForm from "../components/EditRec";
+import { GeneralContainer } from "../components/styling/style";
+
 
 const EditRec = () => {
   return (
-    <div className="container">
+    <GeneralContainer>
       <a href="backapage">Back to Profile</a>
       <br></br>
       <br></br>
       <EditForm />
-    </div>
+    </GeneralContainer>
   );
 };
 
