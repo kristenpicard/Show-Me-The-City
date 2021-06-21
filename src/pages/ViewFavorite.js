@@ -2,10 +2,12 @@ import React from "react";
 // import "./style.css";
 import bbqImage from "../images/bbqplaceholder.png";
 import { GeneralContainer } from "../components/styling/style";
-
+import NavBar from "../components/NavBar/index"
 
 const ViewFavorite = () => {
   return (
+    <>
+    <NavBar />
     <GeneralContainer>
       <a href="backapage">Back to Profile</a>
       <img src={bbqImage} alt="bbq"></img>
@@ -30,6 +32,7 @@ const ViewFavorite = () => {
       </ul>
       <button>Share</button>
     </GeneralContainer>
+    </>
   );
 };
 

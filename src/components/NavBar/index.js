@@ -1,9 +1,9 @@
 import React from "react";
+import {Nav} from "../styling/style"
 
 function NavBar(props) {
     return (
-        <> 
-            <nav>
+                <Nav>
                 {/* user ternary here */}
                 <div>
                     {/* if user not logged in */}
@@ -19,8 +19,7 @@ function NavBar(props) {
                     <a className="home" href="/home">Home</a>
                     <a className="logout" href="/">Logout</a>
                 </div>
-            </nav>
-        </>
+                </Nav>
     )
 }
 

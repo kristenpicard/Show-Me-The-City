@@ -2,10 +2,12 @@ import React from "react";
 // import "./style.css";
 import bbqImage from "../images/bbqplaceholder.png";
 import { GeneralContainer } from "../components/styling/style";
-
+import NavBar from "../components/NavBar/index"
 
 const ViewRec = () => {
   return (
+    <>
+    <NavBar />
     <GeneralContainer>
       <a href="backapage">Back to Profile</a>
       <img src={bbqImage} alt="bbq"></img>
@@ -31,6 +33,7 @@ const ViewRec = () => {
       <button>Edit</button>
       <button>Delete</button>
     </GeneralContainer>
+    </>
   );
 };
 

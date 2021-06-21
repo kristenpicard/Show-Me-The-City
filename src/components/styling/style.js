@@ -29,3 +29,8 @@ export const GeneralContainer = styled.div`
   padding:8%;
   padding-top: 2%;
 `;
+
+export const Nav = styled.nav`
+background-color: #393E46;
+color: #76EAD7;
+`;
