@@ -1,14 +1,13 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import Login from "./pages/Login";
-import Home from "./pages/Home";
-import Landing from "./pages/Landing";
-import Profile from "./pages/Profile";
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import Create from "./pages/CreateRec";
 import Edit from "./pages/EditRec";
-import ViewRec from "./pages/ViewRec";
+import Home from "./pages/Home";
+import Landing from "./pages/Landing";
+import Login from "./pages/Login";
+import Profile from "./pages/Profile";
 import ViewFavorite from "./pages/ViewFavorite";
-
+import ViewRec from "./pages/ViewRec";
 
 function App() {
   return (
