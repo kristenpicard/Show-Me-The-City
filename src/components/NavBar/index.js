@@ -3,7 +3,7 @@ import {Nav} from "../styling/style"
 
 function NavBar(props) {
     return (
-                <Nav>
+                <Nav className="navbar">
                 {/* user ternary here */}
                 <div>
                     {/* if user not logged in */}
