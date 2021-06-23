@@ -1,32 +1,23 @@
 import React from "react";
-import styled from "styled-components";
-
-const Button = styled.button`
-  color: #76ead7;
-  background-color: #393e46;
-  width: 70%;
-`;
+import { Button, DDButton, TextArea } from "../styling/style";
 
 // Form for a user to add a recommendation/post
 function RecForm() {
   return (
     <form className="new-review-form">
       <div className="form-group text-center">
-        <Button
-          type="submit"
-          // className="btn-block"
-        >
-          Add a Photo
-        </Button>
+        <Button type="submit">Add a Photo</Button>
       </div>
-      <div className="form-group">
-        <label>City: </label>
-        <input className="form-control" placeholder="Enter City" />
-      </div>
+      <label>City: </label>
+      <input
+        className="col-12 form-group"
+        type="text"
+        value="Enter City"
+      />
       <div className="form-group">
         <div class="dropdown">
-          <button
-            class="btn btn-secondary dropdown-toggle btn-sm"
+          <DDButton
+            className="btn btn-secondary dropdown-toggle"
             type="button"
             id="dropdownMenuButton"
             data-toggle="dropdown"
@@ -34,7 +25,7 @@ function RecForm() {
             aria-expanded="false"
           >
             Category
-          </button>
+          </DDButton>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="item1">
               Action
@@ -48,31 +39,28 @@ function RecForm() {
           </div>
         </div>
       </div>
-      <div className="form-group">
-        <label>Headline: </label>
-        <input className="form-control" placeholder="Enter Headline" />
-      </div>
+      <label>Headline: </label>
+      <input className="col-12 form-group" type="text" value="Enter Headline" />
       <div className="form-group">
         <label>Short Intro: </label>
-        <textarea className="form-control" placeholder="Enter Introduction" />
+        <TextArea
+          className="form-control"
+          type="text"
+          value="Enter Introduction"
+        />
       </div>
       <div className="form-group">
         <label>List: </label>
         <div class="form-row">
-          <input className="form-control col-1"></input>
+          <input className="form-group col-1" type="text" />
           <div>&nbsp;&nbsp;</div>
-          <input className="form-control col" />
+          <input className="form-group col" type="text" />
         </div>
-        <br></br>
-        <button className="btn btn-light btn-small col-1.5">Add</button>
+
+        <button className="btn btn-small col-1.5">Add</button>
       </div>
       <div className="text-center">
-        <Button
-          type="submit"
-          // className="btn-block"
-        >
-          Submit
-        </Button>
+        <Button type="submit">Submit</Button>
       </div>
     </form>
   );

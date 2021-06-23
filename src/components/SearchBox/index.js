@@ -1,11 +1,11 @@
 import React from "react";
 
 const SearchBox = () => {
-    return (
-        <>
-            <input type="text" value="Search for a City" />
-        </>
-    )
-}
+  return (
+    <>
+      <input className="col-12" type="text" value="Search new city..." />
+    </>
+  );
+};
 
 export default SearchBox;

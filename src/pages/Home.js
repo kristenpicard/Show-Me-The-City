@@ -9,9 +9,8 @@ const Home = () => {
   return (
     <>
       <NavBar />
-
-      <GeneralContainer>
-        <SearchBox />
+      <SearchBox />
+      <GeneralContainer className="text-center">
         <SortResults />
         <CardCarousel />
       </GeneralContainer>
