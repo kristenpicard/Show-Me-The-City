@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, DDButton, TextArea } from "../styling/style";
+import Cloudinary from "../Cloudinary";
 
 // Form for a user to add a recommendation/post
 function RecForm() {
@@ -7,6 +8,11 @@ function RecForm() {
     <form className="new-review-form">
       <div className="form-group text-center">
         <Button type="submit">Add a Photo</Button>
+        <Cloudinary />
+      </div>
+      <div className="form-group">
+        <label>City: </label>
+        <input className="form-control" placeholder="Enter City" />
       </div>
       <label>City: </label>
       <input
