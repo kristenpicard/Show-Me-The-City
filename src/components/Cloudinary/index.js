@@ -8,14 +8,15 @@ function Cloudinary() {
     const CLOUDINARY_IMAGE = "https://res.cloudinary.com/dhx8koumu/image/upload/";
     const CLOUDINARY_UPLOAD_PRESET = 'pyejztvw';
 
-    var imgPreview = document.getElementById('img-preview');
-    var fileUpload = document.getElementById('file-upload');
+    // var imgPreview = document.getElementById('img-preview');
+    // var fileUpload = document.getElementById('file-upload');
 
-    imgPreview.addEventListener('click', () => {
-        fileUpload.click();
-    });
+    // imgPreview.addEventListener('click', () => {
+    //     fileUpload.click();
+    // });
 
-    fileUpload.addEventListener('change', function(event) {
+    function handleChangeEvent(event) {
+    
         // console.log(event);
         var file = event.target.files[0];
         // console.log(file);
@@ -38,18 +39,19 @@ function Cloudinary() {
             // getTransformedImage(format, publicId, version);
             const newUrl = CLOUDINARY_IMAGE + "c_fill,w_125,h_125,g_auto,r_max/v" + version + "/" + publicId + ".png";
             photo = newUrl;
-            imgPreview.src = newUrl;
-            console.log(imgPreview);
+            return photo;
+            // imgPreview.src = newUrl;
+            // console.log(imgPreview);
         }).catch(function(err) {
             console.log(err);
         })
-    });
+    };
  
     return (
         <div className="card-cloud">
             <img src="https://via.placeholder.com/125.png?text=+" id="img-preview" alt=""/>
             <label className="file-upload-container" for="file-upload">
-                <input id="file-upload" type="file" style={{display: 'none'}} />
+                <input id="file-upload" type="file" style={{display: 'none'}} onChange={handleChangeEvent}/>
                 Upload
             </label>
         </div>
