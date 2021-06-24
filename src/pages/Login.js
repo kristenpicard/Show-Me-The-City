@@ -13,8 +13,6 @@ const LoginPage = () => {
       {/*Ternary Operator*/}
       {isLoggedIn ? <h1>Hello</h1> : <Login />}
       <Register />
-      {/*AND Operator*/}
-      {currentTime > 12 && <h1>Why are you still working?</h1>}
     </div>
   );
 };

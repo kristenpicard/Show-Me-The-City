@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import Create from "./pages/CreateRec";
 import Edit from "./pages/EditRec";
@@ -10,6 +10,12 @@ import ViewFavorite from "./pages/ViewFavorite";
 import ViewRec from "./pages/ViewRec";
 
 function App() {
+  const [token, setToken] = useState();
+
+  if(!token) {
+    return <Login setToken={setToken} />
+  }
+
   return (
     <div>
       <Router>
