@@ -75,17 +75,73 @@ export const ProfileHeader = styled.div`
 // Styles CREATE tile from profile My Recs
 export const CreateCard = styled.div`
   height: 20vh;
-  justify-content:center;
+  justify-content: center;
   width: 120px;
-
 `;
 
 // Styles myrecs and myfaves tiles from profile
 export const ProfileCard = styled.div`
   height: 20vh;
-  justify-content:center;
+  justify-content: center;
   background-color: #393e46;
-  color: #76EAD7;
+  color: #76ead7;
   font-weight: bold;
   width: 120px;
+`;
+
+export const ImgRec = styled.img`
+  width: 80vw;
+`;
+
+// This is a container used in the view-rec and view-fave pages
+export const ViewContainer = styled.div`
+  background-color: #eeeeee;
+  width: 100vw;
+  font-color: #393e46;
+  padding: 8%;
+  padding-top: 2%;
+`;
+
+// Container in single rec and fave
+export const RecContainer = styled.div`
+  background-color: #393e46;
+  width: 80vw;
+`;
+
+// styles rec title
+export const RecTitle = styled.h1`
+  color: #76ead7;
+  font-size: 6vw;
+  font-weight: bold;
+`;
+
+// styles rec Favorite number and star
+export const Fave = styled.a`
+  color: #c4fb6d;
+  font-size: 6vw;
+  font-weight: bold;
+`;
+
+// styles rec body text
+export const RecBody = styled.div`
+  color: #eeeeee;
+  font-size: 4vw;
+`;
+
+// styles rec edit button
+export const EditBtn = styled.button`
+  color: #393e46;
+  background-color: #c4fb6d;
+  margin: 10px;
+  font-weight: bold;
+  width: 40vw;
+`;
+
+// styles rec delete button
+export const DelBtn = styled.button`
+  color: #393e46;
+  background-color: #ff1919;
+  margin: 10px;
+  font-weight: bold;
+  width: 40vw;
 `;
