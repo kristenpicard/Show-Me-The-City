@@ -76,6 +76,8 @@ export const ProfileHeader = styled.div`
 export const CreateCard = styled.div`
   height: 20vh;
   justify-content:center;
+  width: 120px;
+
 `;
 
 // Styles myrecs and myfaves tiles from profile
@@ -85,5 +87,5 @@ export const ProfileCard = styled.div`
   background-color: #393e46;
   color: #76EAD7;
   font-weight: bold;
-
+  width: 120px;
 `;
