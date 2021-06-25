@@ -8,7 +8,7 @@ const reviewSeed = [
     location: "Columbus, Ohio",
     title: "Center of Science and Industry (COSI)",
     user: "Alexandra Morales",
-    category: "Art & Culture",
+    category: "Arts & Culture",
     image: "https://via.placeholder.com/150",
     synopsis:
         "A children's science museum",
