@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import ViewFavorite from "./pages/ViewFavorite";
 import ViewRec from "./pages/ViewRec";
+import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 import { AuthProvider } from "../src/contexts/AuthContext";
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
             <Route path="/edit" component={Edit} />
             <Route path="/view-recommendation" component={ViewRec} />
             <Route path="/view-favorite" component={ViewFavorite} />
+            <Route path="/forgot-password" component={ForgotPassword} />
           </Switch>
         </div>
       </Router>
