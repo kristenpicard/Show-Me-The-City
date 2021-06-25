@@ -16,6 +16,13 @@ function App() {
   //   return <Login setToken={setToken} />
   // }
 
+  function handleInputChange(event) {
+    const city = event.target.city;
+    return city;
+  }
+
+  const [loggedIn, setLoggedIn] = useState(false);
+
   return (
     <div>
       <Router>
@@ -24,9 +31,19 @@ function App() {
         </div>
         <div>
           <Switch>
-            <Route exact path="/" component={Landing} />
+            <Route
+              exact
+              path="/"
+              component={() => (
+                <Landing handleInputChange={handleInputChange} />
+              )}
+            />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/home" component={Home} />
+            <Route
+              exact
+              path="/home"
+              component={() => <Home handleInputChange={handleInputChange} />}
+            />
             <Route exact path="/profile" component={Profile} />
             <Route path="/create" component={Create} />
             <Route path="/edit" component={Edit} />
