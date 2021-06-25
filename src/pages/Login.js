@@ -1,6 +1,6 @@
 import React from "react";
 import Login from "../components/auth/Login";
-import Register from "../components/auth/Register";
+import Signup from "../components/auth/Signup";
 
 var isLoggedIn = false;
 
@@ -15,7 +15,7 @@ const LoginPage = () => {
         <h1>Hello</h1>
       ) : (
         <>
-          <Login /> <Register />
+          <Login /> <Signup />
         </>
       )}
     </div>

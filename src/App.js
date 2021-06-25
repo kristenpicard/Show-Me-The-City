@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import ViewFavorite from "./pages/ViewFavorite";
 import ViewRec from "./pages/ViewRec";
+import { AuthProvider } from "../src/contexts/AuthContext";
 
 function App() {
   // const [token, setToken] = useState();
@@ -21,10 +22,11 @@ function App() {
     return city;
   }
 
-  const [loggedIn, setLoggedIn] = useState(false);
+  // const [loggedIn, setLoggedIn] = useState(false);
 
   return (
-    <div>
+    <AuthProvider>
+      <div>
       <Router>
         <div>
           <Link to="/login">Login or Sign Up</Link>
@@ -53,6 +55,7 @@ function App() {
         </div>
       </Router>
     </div>
+    </AuthProvider>
   );
 }
 
