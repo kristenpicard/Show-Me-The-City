@@ -9,6 +9,7 @@ import Profile from "./pages/Profile";
 import ViewFavorite from "./pages/ViewFavorite";
 import ViewRec from "./pages/ViewRec";
 import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
+import UpdateProfile from "./components/UpdateProfile/UpdateProfile";
 import { AuthProvider } from "../src/contexts/AuthContext";
 import PrivateRoute from "./components/PrivateRoute/index";
 
@@ -28,16 +29,7 @@ function App() {
         <div>
           <AuthProvider>
             <Switch>
-              <Route
-                exact
-                path="/"
-                component={() => (
-                  <Landing handleInputChange={handleInputChange} />
-                )}
-              />
-              <Route exact path="/login" component={Login} />
-              <Route path="/forgot-password" component={ForgotPassword} />
-              <PrivateRoute
+            <PrivateRoute
                 exact
                 path="/home"
                 component={() => <Home handleInputChange={handleInputChange} />}
@@ -47,6 +39,16 @@ function App() {
               <PrivateRoute path="/edit" component={Edit} />
               <PrivateRoute path="/view-recommendation" component={ViewRec} />
               <PrivateRoute path="/view-favorite" component={ViewFavorite} />
+              <PrivateRoute path="/update-profile" component={UpdateProfile} />
+              <Route
+                exact
+                path="/"
+                component={() => (
+                  <Landing handleInputChange={handleInputChange} />
+                )}
+              />
+              <Route exact path="/login" component={Login} />
+              <Route path="/forgot-password" component={ForgotPassword} />
             </Switch>
           </AuthProvider>
         </div>
