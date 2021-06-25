@@ -10,54 +10,48 @@ import ViewFavorite from "./pages/ViewFavorite";
 import ViewRec from "./pages/ViewRec";
 import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 import { AuthProvider } from "../src/contexts/AuthContext";
+import PrivateRoute from "./components/PrivateRoute/index";
 
 function App() {
-  // const [token, setToken] = useState();
-
-  // if(!token) {
-  //   return <Login setToken={setToken} />
-  // }
 
   function handleInputChange(event) {
     const city = event.target.city;
     return city;
   }
 
-  // const [loggedIn, setLoggedIn] = useState(false);
-
   return (
-    <AuthProvider>
-      <div>
+    <div>
       <Router>
         <div>
           <Link to="/login">Login or Sign Up</Link>
         </div>
         <div>
-          <Switch>
-            <Route
-              exact
-              path="/"
-              component={() => (
-                <Landing handleInputChange={handleInputChange} />
-              )}
-            />
-            <Route exact path="/login" component={Login} />
-            <Route
-              exact
-              path="/home"
-              component={() => <Home handleInputChange={handleInputChange} />}
-            />
-            <Route exact path="/profile" component={Profile} />
-            <Route path="/create" component={Create} />
-            <Route path="/edit" component={Edit} />
-            <Route path="/view-recommendation" component={ViewRec} />
-            <Route path="/view-favorite" component={ViewFavorite} />
-            <Route path="/forgot-password" component={ForgotPassword} />
-          </Switch>
+          <AuthProvider>
+            <Switch>
+              <Route
+                exact
+                path="/"
+                component={() => (
+                  <Landing handleInputChange={handleInputChange} />
+                )}
+              />
+              <Route exact path="/login" component={Login} />
+              <Route path="/forgot-password" component={ForgotPassword} />
+              <PrivateRoute
+                exact
+                path="/home"
+                component={() => <Home handleInputChange={handleInputChange} />}
+              />
+              <PrivateRoute exact path="/profile" component={Profile} />
+              <PrivateRoute path="/create" component={Create} />
+              <PrivateRoute path="/edit" component={Edit} />
+              <PrivateRoute path="/view-recommendation" component={ViewRec} />
+              <PrivateRoute path="/view-favorite" component={ViewFavorite} />
+            </Switch>
+          </AuthProvider>
         </div>
       </Router>
     </div>
-    </AuthProvider>
   );
 }
 
