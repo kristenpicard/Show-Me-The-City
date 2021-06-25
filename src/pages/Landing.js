@@ -3,6 +3,9 @@ import React from "react";
 import { H1, LandContainer } from "../../src/components/styling/style";
 
 const Landing = () => {
+
+
+
   return (
     <LandContainer className="text-center">
       {/* Image not rendering at the moment - needs fixed */}

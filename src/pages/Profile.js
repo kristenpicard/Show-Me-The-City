@@ -33,14 +33,14 @@ const Profile = () => {
               <ProfileCard className="card card-block text-center">
                 Card Title!
                 <br></br>
-                500 *
+                500 ✰
               </ProfileCard>
             </div>
             <div className="col-5">
               <ProfileCard className="card card-block text-center">
                 Card Title!
                 <br></br>
-                500 *
+                500 ✰
               </ProfileCard>
             </div>
             ...
@@ -53,24 +53,30 @@ const Profile = () => {
               <ProfileCard className="card card-block text-center">
                 Card Title!
                 <br></br>
-                500 *
+                500 ✰
+                <br></br>
+                City Name
               </ProfileCard>
             </div>
             <div className="col-5">
               <ProfileCard className="card card-block text-center">
                 Card Title!
                 <br></br>
-                500 *
+                500 ✰
+                <br></br>
+                City Name
               </ProfileCard>
             </div>
             <div className="col-5">
               <ProfileCard className="card card-block text-center">
                 Card Title!
                 <br></br>
-                500 *
+                500 ✰
+                <br></br>
+                City Name
               </ProfileCard>
             </div>
-            ...
+           
           </div>
         </div>
       </GeneralContainer>

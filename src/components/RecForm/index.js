@@ -7,13 +7,10 @@ function RecForm() {
   return (
     <form className="new-review-form">
       <div className="form-group text-center">
-        <Button type="submit">Add a Photo</Button>
         <Cloudinary />
+        <Button type="submit">Add a Photo</Button>
       </div>
-      <div className="form-group">
-        <label>City: </label>
-        <input className="form-control" placeholder="Enter City" />
-      </div>
+     
       <label>City: </label>
       <input
         className="col-12 form-group"
