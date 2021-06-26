@@ -33,7 +33,7 @@ function NavBar(props) {
         <a className="profile" href="/profile">
           Profile
         </a>
-        <a className="logout" href="/">
+        <a onClick={logout} className="logout" href="#">
           Logout
         </a>
       </div>
@@ -42,7 +42,7 @@ function NavBar(props) {
         <a className="home" href="/home">
           Home
         </a>
-        <a className="logout" href="/">
+        <a onClick={logout} className="logout" href="#">
           Logout
         </a>
       </div>
