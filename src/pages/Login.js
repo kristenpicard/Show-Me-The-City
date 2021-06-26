@@ -1,18 +1,23 @@
 import React from "react";
 import Login from "../components/auth/Login";
-import Register from "../components/auth/Register";
+import Signup from "../components/auth/Signup";
 
-var isLoggedIn = true;
-
-const currentTime = new Date(2019, 11, 1, 9).getHours();
-console.log(currentTime);
+var isLoggedIn = false;
 
 const LoginPage = () => {
+  
+
+
   return (
     <div className="container">
       {/*Ternary Operator*/}
-      {isLoggedIn ? <h1>Hello</h1> : <><Login /> <Register /></>}
-      
+      {isLoggedIn ? (
+        <h1>Hello</h1>
+      ) : (
+        <>
+          <Login /> <Signup />
+        </>
+      )}
     </div>
   );
 };
