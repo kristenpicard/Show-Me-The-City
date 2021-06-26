@@ -166,9 +166,9 @@ const reviewSeed = [
   }
 ];
 
-db.Review
+db.Recs
   .remove({})
-  .then(() => db.Review.collection.insertMany(reviewSeed))
+  .then(() => db.Recs.collection.insertMany(reviewSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
