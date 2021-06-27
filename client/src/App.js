@@ -24,7 +24,7 @@ function App() {
     <div>
       <Router>
         <LandingLinks className="text-center">
-          <Link to="/login">Login or Sign Up</Link>
+          <Link to="/login">Login or Sign UpMAKING A CHAGE</Link>
         </LandingLinks>
         <div>
           <AuthProvider>
