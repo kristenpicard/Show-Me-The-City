@@ -1,27 +1,30 @@
 import React from "react";
-// import city from '../images/bw-city.jpg';
-import { H1, LandContainer } from "../../src/components/styling/style";
+import {
+  Center,
+  H1,
+  LandContainer,
+  Opacity,
+} from "../../src/components/styling/style";
 
 const Landing = () => {
-
-
-
   return (
     <LandContainer className="text-center">
-      {/* Image not rendering at the moment - needs fixed */}
-      {/* styles={{ backgroundImage:`(${city})`}} */}
-      <header>
-        <H1>
-          Show me
-          <br></br>
-          the city!
-        </H1>
-      </header>
-      <input
-        type="text"
-        placeholder="Search for a city.."
-        name="search"
-      ></input>
+      <Opacity>
+        <Center>
+          <header>
+            <H1>
+              Show me
+              <br></br>
+              the city!
+            </H1>
+          </header>
+          <input
+            type="text"
+            placeholder="Search for a city.."
+            name="search"
+          ></input>
+        </Center>
+      </Opacity>
     </LandContainer>
   );
 };

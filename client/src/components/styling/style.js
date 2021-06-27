@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import img from "../../images/bw-city.jpg";
+import img from "../../images/city.jpg";
 
 //This styles the words on the starting landing page of app
 export const H1 = styled.h1`
@@ -8,12 +8,34 @@ export const H1 = styled.h1`
 
 // This styles the starting landing page of app
 export const LandContainer = styled.div`
-  padding-top: 30vh;
   background-image: url(${img});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  position: relative;
+`;
+
+// Adds opacity to landing page image
+export const Opacity = styled.div`
+  background-color: rgba(3, 35, 42, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+`;
+
+// Centers search on landing page
+export const Center = styled.div`
+  padding-top: 30vh;
+`;
+
+// Styles Login and Signup buttons on landing page
+export const LandingLinks = styled.div`
+  color: #eeeeee;
+  text-decoration: underline;
+  background-color: rgba(3, 35, 42);
 `;
 
 // This is a container used on many "views" of the app with same background color and padding
