@@ -167,3 +167,8 @@ export const DelBtn = styled.button`
   font-weight: bold;
   width: 40vw;
 `;
+
+// styles login and signup card containers
+export const LogCont = styled.div`
+  margin: 2vh;
+`;

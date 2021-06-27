@@ -5,9 +5,6 @@ import Signup from "../components/auth/Signup";
 var isLoggedIn = false;
 
 const LoginPage = () => {
-  
-
-
   return (
     <div className="container">
       {/*Ternary Operator*/}
