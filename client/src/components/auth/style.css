@@ -1,0 +1,20 @@
+.card {
+  background-color: #393e46;
+  margin: 10px;
+  border-color: #eeeeee;
+}
+
+h2 {
+  color: #76ead7;
+  font-size: xx-large;
+}
+
+.title {
+  color: #76ead7;
+  font-size: 20px;
+}
+
+.button {
+  background-color: #c4fb6d;
+  color: #393e46;
+}
