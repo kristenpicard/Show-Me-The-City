@@ -6,7 +6,11 @@ import {
   Opacity,
 } from "../../src/components/styling/style";
 
-const Landing = () => {
+function Landing() {
+  function onKeyDown() {
+    window.location.href = "https://www.google.com";
+  }
+
   return (
     <LandContainer className="text-center">
       <Opacity>
@@ -22,11 +26,12 @@ const Landing = () => {
             type="text"
             placeholder="Search for a city.."
             name="search"
+            onKeyDown={(e) => e.key === "Enter" && onKeyDown}
           ></input>
         </Center>
       </Opacity>
     </LandContainer>
   );
-};
+}
 
 export default Landing;
