@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { Button, DDButton, TextArea } from "../styling/style";
 import Cloudinary from "../Cloudinary";
 
+
 // Form for a user to add a recommendation/post
 function RecForm() {
+const locationRef = useRef()
+const titleRef = useRef()
   return (
     <form className="new-review-form">
       <div className="form-group text-center">
@@ -13,12 +16,13 @@ function RecForm() {
      
       <label>City: </label>
       <input
+      ref={locationRef}
         className="col-12 form-group"
         type="text"
         placeholder="Enter City"
       />
       <div className="form-group">
-        <div class="dropdown">
+        <div className="dropdown">
           <DDButton
             className="btn btn-secondary dropdown-toggle"
             type="button"
@@ -29,20 +33,20 @@ function RecForm() {
           >
             Category
           </DDButton>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="item1">
+          <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a className="dropdown-item" href="item1">
               Action
             </a>
-            <a class="dropdown-item" href="item2">
+            <a className="dropdown-item" href="item2">
               Another action
             </a>
-            <a class="dropdown-item" href="item3">
+            <a className="dropdown-item" href="item3">
               Something else here
             </a>
           </div>
         </div>
       </div>
-      <label>Headline: </label>
+      <label ref={titleRef}>Headline: </label>
       <input className="col-12 form-group" type="text" placeholder="Enter Headline" />
       <div className="form-group">
         <label>Short Intro: </label>
@@ -54,7 +58,7 @@ function RecForm() {
       </div>
       <div className="form-group">
         <label>List: </label>
-        <div class="form-row">
+        <div className="form-row">
           <input className="form-group col-1" type="text" />
           <div>&nbsp;&nbsp;</div>
           <input className="form-group col" type="text" />
