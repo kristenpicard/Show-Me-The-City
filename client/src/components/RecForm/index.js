@@ -15,7 +15,7 @@ function RecForm() {
       <input
         className="col-12 form-group"
         type="text"
-        value="Enter City"
+        placeholder="Enter City"
       />
       <div className="form-group">
         <div class="dropdown">
@@ -43,13 +43,13 @@ function RecForm() {
         </div>
       </div>
       <label>Headline: </label>
-      <input className="col-12 form-group" type="text" value="Enter Headline" />
+      <input className="col-12 form-group" type="text" placeholder="Enter Headline" />
       <div className="form-group">
         <label>Short Intro: </label>
         <TextArea
           className="form-control"
           type="text"
-          value="Enter Introduction"
+          placeholder="Enter Introduction"
         />
       </div>
       <div className="form-group">
