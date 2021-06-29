@@ -6,11 +6,12 @@ const Schema = mongoose.Schema;
 const RecsSchema = new Schema({
   // Guessing image is string because URL is a string?
   image: String,
-  city: String,
-  headline: String,
-  intro: String,
-  // Mongoose examples showed this is how to denote an array but unsure?
-  list: [],
+  location: String,
+  title: String,
+  synopsis: String,
+  date: Date,
+  category: String,
+  list: Array,
   favorited: Number,
 });
 
