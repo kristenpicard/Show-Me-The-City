@@ -1,14 +1,34 @@
 import React, { useState, useRef } from "react";
 import { Button, DDButton, TextArea } from "../styling/style";
 import Cloudinary from "../Cloudinary";
+import API from "../../utils/API";
 
 
 // Form for a user to add a recommendation/post
 function RecForm() {
-const locationRef = useRef()
-const titleRef = useRef()
+  const locationRef = useRef();
+  const titleRef = useRef();
+  const synopsisRef = useRef();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    API.createPost({
+      title: titleRef.current.value,
+      location: locationRef.current.value,
+      synopsis: synopsisRef.current.value,
+    })
+      .then((res) => {
+        console.log(res)
+      })
+      .catch((err) => console.log(err));
+
+    titleRef.current.value = '';
+    locationRef.current.value = '';
+    synopsisRef.current.value = '';
+  }
+
   return (
-    <form className="new-review-form">
+    <form className="new-review-form" onSubmit={handleSubmit}>
       <div className="form-group text-center">
         <Cloudinary />
         {/* <Button type="file" onClick={Cloudinary.handleChangeEvent}>Add a Photo</Button> */}
@@ -46,25 +66,16 @@ const titleRef = useRef()
           </div>
         </div>
       </div>
-      <label ref={titleRef}>Headline: </label>
-      <input className="col-12 form-group" type="text" placeholder="Enter Headline" />
+      <label>Headline: </label>
+      <input ref={titleRef} className="col-12 form-group" type="text" placeholder="Enter Headline" />
       <div className="form-group">
         <label>Short Intro: </label>
-        <TextArea
+        <TextArea 
+          ref={synopsisRef}
           className="form-control"
           type="text"
           placeholder="Enter Introduction"
         />
-      </div>
-      <div className="form-group">
-        <label>List: </label>
-        <div className="form-row">
-          <input className="form-group col-1" type="text" />
-          <div>&nbsp;&nbsp;</div>
-          <input className="form-group col" type="text" />
-        </div>
-
-        <button className="btn btn-small col-1.5">Add</button>
       </div>
       <div className="text-center">
         <Button type="submit">Submit</Button>
