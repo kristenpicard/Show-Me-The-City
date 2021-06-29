@@ -28,14 +28,14 @@ function EditForm() {
           >
             Category
           </DDButton>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="item1">
+          <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a className="dropdown-item" href="item1">
               Action
             </a>
-            <a class="dropdown-item" href="item2">
+            <a className="dropdown-item" href="item2">
               Another action
             </a>
-            <a class="dropdown-item" href="item3">
+            <a className="dropdown-item" href="item3">
               Something else here
             </a>
           </div>
@@ -53,7 +53,7 @@ function EditForm() {
       </div>
       <div className="form-group">
         <label>List: </label>
-        <div class="form-row">
+        <div className="form-row">
           <input className="form-group col-1" type="text" />
           <div>&nbsp;&nbsp;</div>
           <input className="form-group col" type="text" placeholder="Will be value.list[0]" />
