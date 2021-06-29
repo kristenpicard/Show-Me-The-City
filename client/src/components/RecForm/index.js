@@ -8,7 +8,7 @@ function RecForm() {
     <form className="new-review-form">
       <div className="form-group text-center">
         <Cloudinary />
-        <Button type="submit">Add a Photo</Button>
+        {/* <Button type="file" onClick={Cloudinary.handleChangeEvent}>Add a Photo</Button> */}
       </div>
      
       <label>City: </label>

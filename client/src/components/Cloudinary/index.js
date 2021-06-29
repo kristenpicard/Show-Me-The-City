@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { Button } from "../styling/style";
 import axios from "axios";
 
 function Cloudinary() {
@@ -6,7 +7,8 @@ function Cloudinary() {
     const CLOUDINARY_IMAGE = "https://res.cloudinary.com/dhx8koumu/image/upload/";
     const CLOUDINARY_UPLOAD_PRESET = 'pyejztvw';
 
-    const [photo, setPhoto] = useState("https://via.placeholder.com/300x175")
+    const [photo, setPhoto] = useState("https://via.placeholder.com/300x175");
+    const triggerEvent = useRef(null);
 
     function handleChangeEvent(event) {
         var file = event.target.files[0];
@@ -33,11 +35,12 @@ function Cloudinary() {
     };
  
     return (
-        <div className="card-cloud">
+        <div className="card-cloud" style={{display: 'block'}} onClick={() => triggerEvent.current.click()}>
             <img src={photo} id="img-preview" alt=""/>
-            <label className="file-upload-container" for="file-upload">
-                <input id="file-upload" type="file" style={{display: 'none'}} onChange={handleChangeEvent}/>
-                Upload
+            <label className="file-upload-container" for="file-upload" >
+                <input ref={triggerEvent} id="fileUpload" type="file" style={{display: 'none'}} onChange={handleChangeEvent}/>
+                <br/>
+                <Button type="submit">Add a Photo</Button>
             </label>
         </div>
     )
