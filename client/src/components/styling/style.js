@@ -1,6 +1,28 @@
 import styled from "styled-components";
 import img from "../../images/city.jpg";
 
+// Media Query Sizing
+const size = {
+  mobileS: "320px",
+  mobileM: "375px",
+  mobileL: "425px",
+  tablet: "768px",
+  laptop: "1024px",
+  laptopL: "1440px",
+  desktop: "2560px",
+};
+
+export const device = {
+  mobileS: `(min-width: ${size.mobileS})`,
+  mobileM: `(min-width: ${size.mobileM})`,
+  mobileL: `(min-width: ${size.mobileL})`,
+  tablet: `(min-width: ${size.tablet})`,
+  laptop: `(min-width: ${size.laptop})`,
+  laptopL: `(min-width: ${size.laptopL})`,
+  desktop: `(min-width: ${size.desktop})`,
+  desktopL: `(min-width: ${size.desktop})`,
+};
+
 //This styles the words on the starting landing page of app
 export const H1 = styled.h1`
   color: white;
@@ -70,6 +92,24 @@ export const DDButton = styled.div`
   background-color: white;
   height: 40px;
   border-color: #393e46;
+
+  @media ${device.tablet} {
+    max-width: 200px;
+  }
+`;
+
+export const Input = styled.input`
+  @media ${device.tablet} {
+    max-width: 500px;
+  }
+
+  @media ${device.laptop} {
+    width: 1300px;
+  }
+
+  @media ${device.desktop} {
+    width: 25vw;
+  }
 `;
 
 // Styles Button on Create Rec Page
