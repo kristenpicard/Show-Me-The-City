@@ -130,25 +130,67 @@ export const TextArea = styled.textarea`
 // Styles Profile Titles
 export const ProfileHeader = styled.div`
   font-weight: bold;
-  font-size: 3vh;
+  font-size: 4vh;
   padding: 3vh;
+`;
+
+// Styles Profile Name and Email section
+export const ProfileInfo = styled.div`
+  font-size: 3vh;
+  @media ${device.mobileS} {
+    font-size: 20px;
+  }
+
+  @media ${device.tablet} {
+    font-size: 30px;
+  }
+
+  @media ${device.laptop} {
+    font-size: 40px;
+  }
 `;
 
 // Styles CREATE tile from profile My Recs
 export const CreateCard = styled.div`
-  height: 20vh;
+  height: 30vh;
   justify-content: center;
   width: 120px;
+
+  @media ${device.tablet} {
+    width: 130px;
+  }
+
+  @media ${device.laptop} {
+    width: 200px;
+    height: 400px;
+  }
+
+  @media ${device.desktop} {
+    width: 400px;
+  }
 `;
 
 // Styles myrecs and myfaves tiles from profile
 export const ProfileCard = styled.div`
-  height: 20vh;
+  height: 30vh;
   justify-content: center;
   background-color: #393e46;
   color: #76ead7;
   font-weight: bold;
-  width: 120px;
+  width: 35vw;
+
+  @media ${device.tablet} {
+    width: 130px;
+  }
+
+  @media ${device.laptop} {
+    width: 200px;
+    height: 400px;
+  }
+
+  @media ${device.desktop} {
+    width: 400px;
+  }
 `;
 
 export const ImgRec = styled.img`
