@@ -7,6 +7,7 @@ import { Button, TextArea } from "../styling/style";
 
 // Form for a user to add a recommendation/post
 function RecForm(props) {
+  console.log(props.photo);
   const locationRef = useRef();
   const titleRef = useRef();
   const synopsisRef = useRef();
@@ -18,6 +19,10 @@ function RecForm(props) {
   const handleSelect = (e) => {
     selectedCategory = e;
   };
+
+  // add method to pass to Cloudinary - return state (value) of child component
+  
+  // or keep photo state here in parent element & pass handler to child
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -40,7 +45,7 @@ function RecForm(props) {
   return (
     <form onSubmit={handleSubmit}>
       <div className="form-group text-center">
-        <Cloudinary />
+        <Cloudinary photo={props.photo}/>
         {/* <Button type="file" onClick={Cloudinary.handleChangeEvent}>Add a Photo</Button> */}
         
       </div>

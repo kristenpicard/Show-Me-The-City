@@ -3,7 +3,8 @@ import RecForm from "../components/RecForm";
 import { ViewContainer } from "../components/styling/style";
 import NavBar from "../components/NavBar/index"
 
-const CreateRec = () => {
+const CreateRec = (props) => {
+  console.log(props);
   return (
     <>
     <NavBar />
@@ -12,7 +13,7 @@ const CreateRec = () => {
       <a href="backapage">Back to Profile</a>
       <br></br>
       <br></br>
-      <RecForm />
+      <RecForm photo={props.photo}/>
     </ViewContainer>
     </>
   );
