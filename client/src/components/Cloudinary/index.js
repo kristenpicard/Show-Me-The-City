@@ -2,12 +2,13 @@ import axios from "axios";
 import React, { useRef, useState } from "react";
 import { Button } from "../styling/style";
 
-function Cloudinary() {
+function Cloudinary(props) {
   const CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/dhx8koumu/upload/";
   const CLOUDINARY_IMAGE = "https://res.cloudinary.com/dhx8koumu/image/upload/";
   const CLOUDINARY_UPLOAD_PRESET = "pyejztvw";
 
-  const [photo, setPhoto] = useState("https://via.placeholder.com/300x175");
+  
+//   const [photo, setPhoto] = useState("https://via.placeholder.com/300x175");
   const triggerEvent = useRef(null);
 
   function handleChangeEvent(event) {
@@ -34,8 +35,8 @@ function Cloudinary() {
           "/" +
           publicId +
           ".png";
-        setPhoto(newUrl);
-        return photo;
+        props.setPhoto(newUrl);
+        // return props.photo;
       })
       .catch(function (err) {
         console.log(err);
@@ -48,7 +49,7 @@ function Cloudinary() {
       // style={{ display: "block" }}
       onClick={() => triggerEvent.current.click()}
     >
-      <img src={photo} id="img-preview" alt="" />
+      <img src={props.photo} id="img-preview" alt="" />
       <label className="file-upload-container" for="file-upload">
         <input
           ref={triggerEvent}

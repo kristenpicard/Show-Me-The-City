@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import NavBar from "../components/NavBar/index";
 import {
   CreateCard,
@@ -13,6 +13,8 @@ import { useAuth } from "../contexts/AuthContext";
 const Profile = () => {
   const [error, setError] = useState("");
   const { currentUser } = useAuth();
+  const [photo, setPhoto] = useState("https://via.placeholder.com/300x175");
+
 
   return (
     <>
@@ -36,9 +38,15 @@ const Profile = () => {
         <div className="container">
           <div className="row flex-row flex-nowrap">
             <div className="col">
-              <CreateCard className="card text-center">
-                + Create
-              </CreateCard>
+            
+                <CreateCard className="card text-center">
+        
+                  <Link to={{pathname: "/create", photo: {photo}}}>
+                    + Create
+                  </Link>
+                  
+                </CreateCard>
+              
             </div>
             <div className="col">
               <ProfileCard className="card text-center">
