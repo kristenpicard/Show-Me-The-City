@@ -38,10 +38,11 @@ function RecForm(props) {
   };
 
   return (
-    <form className="new-review-form" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <div className="form-group text-center">
         <Cloudinary />
         {/* <Button type="file" onClick={Cloudinary.handleChangeEvent}>Add a Photo</Button> */}
+        
       </div>
 
       <label>City: </label>

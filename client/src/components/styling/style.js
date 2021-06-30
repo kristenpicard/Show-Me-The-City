@@ -116,7 +116,7 @@ export const Input = styled.input`
 export const Button = styled.button`
   color: #76ead7;
   background-color: #393e46;
-  width: 70%;
+  width: 300px;
 `;
 
 // Styles the textarea for intro of create rec

@@ -45,7 +45,7 @@ function Cloudinary() {
   return (
     <div
       className="card-cloud"
-      style={{ display: "block" }}
+      // style={{ display: "block" }}
       onClick={() => triggerEvent.current.click()}
     >
       <img src={photo} id="img-preview" alt="" />
@@ -56,12 +56,12 @@ function Cloudinary() {
           type="file"
           style={{ display: "none" }}
           onChange={handleChangeEvent}
-        ></input>
+        />
         <br></br>
-        <div>
-          <Button type="submit">Add a Photo</Button>
-        </div>
       </label>
+      <div>
+        <Button type="submit">Add a Photo</Button>
+      </div>
     </div>
   );
 }
