@@ -1,18 +1,23 @@
 import React, { useRef } from "react";
-import Cloudinary from "../Cloudinary";
-
-import { Button, DDButton, TextArea } from "../styling/style";
-
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
 import API from "../../utils/API";
-
-
+import Cloudinary from "../Cloudinary";
+import { Button, TextArea } from "../styling/style";
 
 // Form for a user to add a recommendation/post
-function RecForm() {
+function RecForm(props) {
   const locationRef = useRef();
   const titleRef = useRef();
-
   const synopsisRef = useRef();
+  // created a variable and on load it is empty - default to empty
+  let selectedCategory = "";
+
+  // This function is taking the selected option and setting it 
+  // to a variable to be use in the post of the handleSubmit
+  const handleSelect = (e) => {
+    selectedCategory = e;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,17 +25,17 @@ function RecForm() {
       title: titleRef.current.value,
       location: locationRef.current.value,
       synopsis: synopsisRef.current.value,
+      category: selectedCategory,
     })
       .then((res) => {
-        console.log(res)
+        console.log(res);
       })
       .catch((err) => console.log(err));
 
-    titleRef.current.value = '';
-    locationRef.current.value = '';
-    synopsisRef.current.value = '';
-  }
-
+    titleRef.current.value = "";
+    locationRef.current.value = "";
+    synopsisRef.current.value = "";
+  };
 
   return (
     <form className="new-review-form" onSubmit={handleSubmit}>
@@ -47,33 +52,23 @@ function RecForm() {
         placeholder="Enter City"
       />
       <div className="form-group">
-        <div className="dropdown">
-          <DDButton
-            className="btn btn-secondary dropdown-toggle"
-            type="button"
-            id="dropdownMenuButton"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Category
-          </DDButton>
-          <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a className="dropdown-item" href="item1">
-              Action
-            </a>
-            <a className="dropdown-item" href="item2">
-              Another action
-            </a>
-            <a className="dropdown-item" href="item3">
-              Something else here
-            </a>
-          </div>
-        </div>
+
+        <DropdownButton
+          alignRight
+          title="Category"
+          id="dropdownMenuButton"
+          // This is the event listener which calls handleSelect when option is chosen
+          onSelect={handleSelect}
+        >
+          <Dropdown.Item eventKey="option-1">option-1</Dropdown.Item>
+          <Dropdown.Item eventKey="option-2">option-2</Dropdown.Item>
+          <Dropdown.Item eventKey="option-3">option 3</Dropdown.Item>
+        </DropdownButton>
       </div>
 
-      <label ref={titleRef}>Headline: </label>
+      <label>Headline: </label>
       <input
+        ref={titleRef}
         className="col-12 form-group"
         type="text"
         placeholder="Enter Headline"
@@ -81,7 +76,7 @@ function RecForm() {
 
       <div className="form-group">
         <label>Short Intro: </label>
-        <TextArea 
+        <TextArea
           ref={synopsisRef}
           className="form-control"
           type="text"
