@@ -1,22 +1,21 @@
-import React, { useState, useRef } from "react";
-import { Button, DDButton, TextArea } from "../styling/style";
+import React, { useRef } from "react";
 import Cloudinary from "../Cloudinary";
-
+import { Button, DDButton, TextArea } from "../styling/style";
 
 // Form for a user to add a recommendation/post
 function RecForm() {
-const locationRef = useRef()
-const titleRef = useRef()
+  const locationRef = useRef();
+  const titleRef = useRef();
   return (
     <form className="new-review-form">
       <div className="form-group text-center">
         <Cloudinary />
         {/* <Button type="file" onClick={Cloudinary.handleChangeEvent}>Add a Photo</Button> */}
       </div>
-     
+
       <label>City: </label>
       <input
-      ref={locationRef}
+        ref={locationRef}
         className="col-12 form-group"
         type="text"
         placeholder="Enter City"
@@ -47,7 +46,11 @@ const titleRef = useRef()
         </div>
       </div>
       <label ref={titleRef}>Headline: </label>
-      <input className="col-12 form-group" type="text" placeholder="Enter Headline" />
+      <input
+        className="col-12 form-group"
+        type="text"
+        placeholder="Enter Headline"
+      />
       <div className="form-group">
         <label>Short Intro: </label>
         <TextArea
