@@ -1,16 +1,19 @@
 import React from "react";
-import { DDButton, HomeTitle } from "../styling/style";
+import { Form } from "react-bootstrap";
+import { DDButton, HomeTitle, Input } from "../styling/style";
 
 const SortResults = () => {
   return (
     <>
       <HomeTitle>Showing local favorites in COLUMBUS, OH</HomeTitle>
-      <form>
-        <input
-          className="col-12 form-group"
-          type="text"
-          value="Search for an interest..."
-        />
+      <Form>
+        <Form.Group>
+          <Input
+            className="col-12 input"
+            type="text"
+            value="Search for an interest..."
+          ></Input>
+        </Form.Group>
         <div className="row form-group">
           <div className="dropdown col">
             <DDButton
@@ -70,7 +73,7 @@ const SortResults = () => {
             </div>
           </div>
         </div>
-      </form>
+      </Form>
     </>
   );
 };
