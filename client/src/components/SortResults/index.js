@@ -2,11 +2,16 @@ import React from "react";
 import { Form } from "react-bootstrap";
 import { DDButton, HomeTitle, Input } from "../styling/style";
 
+
+const style = {
+  fontFamily: 'PT Serif Caption'
+}
+
 const SortResults = () => {
   return (
     <>
       <HomeTitle>Showing local favorites in COLUMBUS, OH</HomeTitle>
-      <Form>
+      <Form style={style}>
         <Form.Group>
           <Input
             className="col-12 input"

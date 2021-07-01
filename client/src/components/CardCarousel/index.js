@@ -1,8 +1,12 @@
 import React from "react";
 
+const style = {
+  fontFamily: 'PT Serif Caption'
+}
+
 const CardCarousel = () => {
   return (
-    <>
+    <div style={style}>
       <div
         id="carouselExampleControls"
         className="carousel slide"
@@ -38,7 +42,7 @@ const CardCarousel = () => {
           <span className="sr-only">Next</span>
         </a>
       </div>
-    </>
+    </div>
   );
 };
 
