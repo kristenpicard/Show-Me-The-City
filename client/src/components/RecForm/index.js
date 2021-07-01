@@ -7,7 +7,7 @@ import { Button, TextArea } from "../styling/style";
 
 // Form for a user to add a recommendation/post
 function RecForm(props) {
-  console.log(props.photo);
+  console.log(props);
   const locationRef = useRef();
   const titleRef = useRef();
   const synopsisRef = useRef();
@@ -45,7 +45,7 @@ function RecForm(props) {
   return (
     <form onSubmit={handleSubmit}>
       <div className="form-group text-center">
-        <Cloudinary photo={props.photo}/>
+        <Cloudinary photo={props.photo} setPhoto={props.setPhoto}/>
         {/* <Button type="file" onClick={Cloudinary.handleChangeEvent}>Add a Photo</Button> */}
         
       </div>
