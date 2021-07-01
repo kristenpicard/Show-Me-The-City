@@ -171,7 +171,53 @@ export const CreateCard = styled.div`
 `;
 
 // Styles myrecs and myfaves tiles from profile
-export const ProfileCard = styled.div`
+// export const ProfileCard = styled.div`
+//   height: 30vh;
+//   justify-content: center;
+//   background-color: #393e46;
+//   color: #76ead7;
+//   font-weight: bold;
+//   width: 35vw;
+
+//   @media ${device.tablet} {
+//     width: 130px;
+//   }
+
+//   @media ${device.laptop} {
+//     width: 200px;
+//     height: 400px;
+//   }
+
+//   @media ${device.desktop} {
+//     width: 400px;
+//   }
+// `;
+
+// Styles Recommendation Card
+export const RecCardStyling = styled.div`
+  height: 30vh;
+  justify-content: center;
+  background-color: #393e46;
+  color: #76ead7;
+  font-weight: bold;
+  width: 35vw;
+
+  @media ${device.tablet} {
+    width: 130px;
+  }
+
+  @media ${device.laptop} {
+    width: 200px;
+    height: 400px;
+  }
+
+  @media ${device.desktop} {
+    width: 400px;
+  }
+`;
+
+// Styles Favorite Card
+export const FaveCardStyling = styled.div`
   height: 30vh;
   justify-content: center;
   background-color: #393e46;
