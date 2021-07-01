@@ -9,6 +9,7 @@ import {
   RecContainer,
   RecTitle,
   ViewContainer,
+  BackToProfile
 } from "../components/styling/style";
 // import "./style.css";
 import bbqImage from "../images/bbqplaceholder.png";
@@ -18,7 +19,9 @@ const ViewFavorite = () => {
     <>
       <NavBar />
       <ViewContainer>
+      <BackToProfile>
         <a href="backapage">Back to Profile</a>
+        </BackToProfile>
         <div className="container">
           <br></br>
           <ImgRec src={bbqImage} alt="bbq"></ImgRec>

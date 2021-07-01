@@ -1,6 +1,6 @@
 import React from "react";
 import EditForm from "../components/EditRec";
-import { GeneralContainer } from "../components/styling/style";
+import { GeneralContainer, BackToProfile } from "../components/styling/style";
 import NavBar from "../components/NavBar/index"
 
 const EditRec = () => {
@@ -8,7 +8,9 @@ const EditRec = () => {
     <>
     <NavBar />
     <GeneralContainer>
+      <BackToProfile>
       <a href="backapage">Back to Profile</a>
+      </BackToProfile>
       <br></br>
       <br></br>
       <EditForm />

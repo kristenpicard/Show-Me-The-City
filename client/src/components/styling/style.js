@@ -64,6 +64,8 @@ export const LandingLinks = styled.div`
   color: #eeeeee;
   text-decoration: underline;
   background-color: rgba(3, 35, 42);
+  font-family: 'Hind Siliguri', sans-serif;
+  font-weight: 600;
 `;
 
 // This is a container used on many "views" of the app with same background color and padding
@@ -80,14 +82,24 @@ export const GeneralContainer = styled.div`
 // Styles the Navbar
 export const Nav = styled.nav`
   background-color: #393e46;
-  color: #76ead7;
+  color: #76EAD7;
   text-decoration: underline;
+  font-family: 'Hind Siliguri', sans-serif;
+  font-weight: 600;
+`;
+
+// Styles top search bar on Home page
+export const TopSearch = styled.div`
+font-family: 'PT Serif Caption', 'serif';
+font-weight: 400;
 `;
 
 // Styles Title on Home page
 export const HomeTitle = styled.div`
   font-size: 25px;
   padding: 5%;
+  font-family: 'Hind Siliguri', sans-serif;
+  font-weight: 600;
 `;
 
 // Styles the dropdown button
@@ -133,16 +145,27 @@ export const TextArea = styled.textarea`
   border-color: #393e46;
 `;
 
+// Styles back to profile link
+export const BackToProfile = styled.div`
+font-family: 'Hind Siliguri', sans-serif;
+font-weight: 600;
+`;
+
 // Styles Profile Titles
 export const ProfileHeader = styled.div`
   font-weight: bold;
   font-size: 4vh;
   padding: 3vh;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 800;
+  color: #393E46;
 `;
 
 // Styles Profile Name and Email section
 export const ProfileInfo = styled.div`
   font-size: 3vh;
+  font-family: 'Hind Siliguri', sans-serif;
+  font-weight: 400;
   @media ${device.mobileS} {
     font-size: 20px;
   }
@@ -161,6 +184,9 @@ export const CreateCard = styled.div`
   height: 30vh;
   justify-content: center;
   width: 120px;
+  font-family: 'Hind Siliguri', sans-serif;
+  font-weight: 600;
+  color: #76EAD7;
 
   @media ${device.tablet} {
     width: 130px;
@@ -184,6 +210,8 @@ export const CreateCard = styled.div`
 //   color: #76ead7;
 //   font-weight: bold;
 //   width: 35vw;
+// font-family: 'Hind Siliguri', sans-serif;
+//   font-weight: 600;
 
 //   @media ${device.tablet} {
 //     width: 130px;
@@ -205,8 +233,9 @@ export const RecCardStyling = styled.div`
   justify-content: center;
   background-color: #393e46;
   color: #76ead7;
-  font-weight: bold;
   width: 35vw;
+  font-family: 'Hind Siliguri', sans-serif;
+  font-weight: 600;
 
   @media ${device.tablet} {
     width: 130px;
@@ -228,7 +257,8 @@ export const FaveCardStyling = styled.div`
   justify-content: center;
   background-color: #393e46;
   color: #76ead7;
-  font-weight: bold;
+  font-family: 'Hind Siliguri', sans-serif;
+  font-weight: 600;
   width: 35vw;
 
   @media ${device.tablet} {
