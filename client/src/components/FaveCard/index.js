@@ -1,15 +1,16 @@
 import React from "react";
 import { FaveCardStyling } from "../styling/style";
 
-const FaveCard = () => {
+const FaveCard = (props) => {
   return (
     <>
       <div className="col">
         <FaveCardStyling className="card card-block text-center">
-          Card Title!
+        {props.title}!
           <br></br>
-          500 ✰<br></br>
-          City Name
+          {props.favorites} ✰
+          <br></br>
+          {props.location} ✰
         </FaveCardStyling>
       </div>
     </>

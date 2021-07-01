@@ -1,14 +1,14 @@
 import React from "react";
 import { RecCardStyling } from "../styling/style";
 
-const RecCard = () => {
+const RecCard = (props) => {
   return (
     <>
       <div className="col">
         <RecCardStyling className="card text-center">
-          Card Title!
+          {props.title}!
           <br></br>
-          500 ✰
+          {props.favorites} ✰
         </RecCardStyling>
       </div>
     </>
