@@ -6,7 +6,7 @@ function Cloudinary(props) {
   const CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/dhx8koumu/upload/";
   const CLOUDINARY_IMAGE = "https://res.cloudinary.com/dhx8koumu/image/upload/";
   const CLOUDINARY_UPLOAD_PRESET = "pyejztvw";
-
+  console.log(props);
   
 //   const [photo, setPhoto] = useState("https://via.placeholder.com/300x175");
   const triggerEvent = useRef(null);
@@ -50,7 +50,7 @@ function Cloudinary(props) {
       onClick={() => triggerEvent.current.click()}
     >
       <img src={props.photo} id="img-preview" alt="" />
-      <label className="file-upload-container" for="file-upload">
+      <label className="file-upload-container" forhtml="file-upload">
         <input
           ref={triggerEvent}
           id="fileUpload"

@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import RecForm from "../components/RecForm";
 import { ViewContainer, BackToProfile } from "../components/styling/style";
 import NavBar from "../components/NavBar/index"
 
-const CreateRec = (props) => {
-  console.log(props);
+const CreateRec = () => {
+
+  const [photo, setPhoto] = useState("https://via.placeholder.com/300x175");
+
   return (
     <>
     <NavBar />
@@ -15,7 +17,7 @@ const CreateRec = (props) => {
       </BackToProfile>
       <br></br>
       <br></br>
-      <RecForm photo={props.photo}/>
+      <RecForm photo={photo} setPhoto={setPhoto}/>
     </ViewContainer>
     </>
   );
