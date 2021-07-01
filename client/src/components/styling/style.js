@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import img from "../../images/city.jpg";
 
+// Display/headline:font-family: 'Fira Sans', sans-serif;
+// Navbar & all h tags besides the h1:font-family: 'Hind Siliguri', sans-serif;
+// Small text/paragraphs:font-family: 'PT Serif Caption', serif;
+
 // Media Query Sizing
 const size = {
   mobileS: "320px",
@@ -25,7 +29,9 @@ export const device = {
 
 //This styles the words on the starting landing page of app
 export const H1 = styled.h1`
-  color: white;
+  color: #eeeeee;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 800;
 `;
 
 // This styles the starting landing page of app

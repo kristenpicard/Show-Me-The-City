@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import FaveCard from "../components/FaveCard/index";
 import NavBar from "../components/NavBar/index";
 import RecCard from "../components/RecCard/index";
-import FaveCard from "../components/FaveCard/index";
-
 import {
   CreateCard,
   GeneralContainer,
@@ -43,13 +42,26 @@ const Profile = () => {
                 </Link>
               </CreateCard>
             </div>
-            <RecCard />
+            {/* Pseudo code to map recs!!!!! See RecCard also */}
+            {/* {this.state.recommendations.map((data) => (
+              <RecCard 
+              title={data.title} 
+              favorites={data.favorites}
+               />
+            ))} */}
           </div>
         </div>
         <ProfileHeader classNameName="text-center">My Favorites</ProfileHeader>
         <div className="container">
           <div className="row flex-row flex-nowrap">
-            <FaveCard />
+            {/* Pseudo code to map favorites info!!!!! See FaveCard also */}
+            {/* {this.state.recommendations.map((data) => (
+              <FaveCard 
+              title={data.title} 
+              favorites={data.favorites}
+              location={data.location}
+               />
+            ))} */}
           </div>
         </div>
       </GeneralContainer>

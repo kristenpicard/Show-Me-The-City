@@ -6,6 +6,10 @@ import {
   Opacity,
 } from "../../src/components/styling/style";
 
+const style = {
+  opacity: '.7'
+}
+
 function Landing() {
   function onKeyDown() {
     window.location.href = "https://www.google.com";
@@ -23,6 +27,8 @@ function Landing() {
             </H1>
           </header>
           <input
+            style={style}
+            className="searchBox"
             type="text"
             placeholder="Search for a city.."
             name="search"
