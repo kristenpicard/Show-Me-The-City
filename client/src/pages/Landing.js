@@ -1,22 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Center,
   H1,
   LandContainer,
   Opacity,
 } from "../../src/components/styling/style";
-import { Link } from "react-router-dom"
-import { LandingLinks } from "../components/styling/style";
 
 const style = {
-  opacity: '.7'
-}
+  opacity: ".7",
+};
+
+const styleLink = {
+  color: "white",
+};
 
 function Landing() {
   // function onKeyDown() {
   //   window.location.href = "https://www.google.com";
   // }
-
 
   // searchRec = (query) => {
   //   API.getRec(query)
@@ -41,12 +43,11 @@ function Landing() {
   //   this.searchRec(this.state.search);
   // };
 
-
   return (
     <LandContainer className="text-center">
-      <LandingLinks className="text-center">
-          <Link to="/login">Login or Sign Up</Link>
-      </LandingLinks>
+      <Link style={styleLink} to="/login">
+        Login or Sign Up
+      </Link>
       <Opacity>
         <Center>
           <header>

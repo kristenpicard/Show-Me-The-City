@@ -3,6 +3,11 @@ import React, { useRef, useState } from "react";
 import { TopSearch } from "../styling/style";
 import API from "../../utils/API";
 
+const style = {
+  fontFamily: 'Hind Siliguri'
+}
+
+
 const SearchBox = (props) => {
   // let cityValue;
   
@@ -39,7 +44,7 @@ const SearchBox = (props) => {
         // search={this.state.search}
         // handleInputChange={this.handleInputChange}
         // handleFormSubmit={this.handleFormSubmit}
-        className="col-12" type="text" placeholder="Search new city..." />
+        className="col-12" type="text" style={style} placeholder="Search new city..." />
     </TopSearch>
   );
 };

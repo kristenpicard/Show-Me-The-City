@@ -4,7 +4,7 @@ import { DDButton, HomeTitle, Input } from "../styling/style";
 
 
 const style = {
-  fontFamily: 'PT Serif Caption'
+  fontFamily: 'Hind Siliguri'
 }
 
 const SortResults = () => {

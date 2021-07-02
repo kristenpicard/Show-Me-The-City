@@ -64,7 +64,7 @@ export const LandingLinks = styled.div`
   color: #eeeeee;
   text-decoration: underline;
   background-color: rgba(3, 35, 42);
-  font-family: 'Hind Siliguri', sans-serif;
+  font-family: "Hind Siliguri", sans-serif;
   font-weight: 600;
 `;
 
@@ -82,23 +82,23 @@ export const GeneralContainer = styled.div`
 // Styles the Navbar
 export const Nav = styled.nav`
   background-color: #393e46;
-  color: #76EAD7;
+  color: #76ead7;
   text-decoration: underline;
-  font-family: 'Hind Siliguri', sans-serif;
+  font-family: "Hind Siliguri", sans-serif;
   font-weight: 600;
 `;
 
 // Styles top search bar on Home page
 export const TopSearch = styled.div`
-font-family: 'PT Serif Caption', 'serif';
-font-weight: 400;
+  font-family: "PT Serif Caption", "serif";
+  font-weight: 400;
 `;
 
 // Styles Title on Home page
 export const HomeTitle = styled.div`
   font-size: 25px;
   padding: 5%;
-  font-family: 'Hind Siliguri', sans-serif;
+  font-family: "Hind Siliguri", sans-serif;
   font-weight: 600;
 `;
 
@@ -147,8 +147,14 @@ export const TextArea = styled.textarea`
 
 // Styles back to profile link
 export const BackToProfile = styled.div`
-font-family: 'Hind Siliguri', sans-serif;
-font-weight: 600;
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 600;
+`;
+
+// Styles back to profile link
+export const FormFont = styled.div`
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 600;
 `;
 
 // Styles Profile Titles
@@ -158,13 +164,13 @@ export const ProfileHeader = styled.div`
   padding: 3vh;
   font-family: "Fira Sans", sans-serif;
   font-weight: 800;
-  color: #393E46;
+  color: #393e46;
 `;
 
 // Styles Profile Name and Email section
 export const ProfileInfo = styled.div`
   font-size: 3vh;
-  font-family: 'Hind Siliguri', sans-serif;
+  font-family: "Hind Siliguri", sans-serif;
   font-weight: 400;
   @media ${device.mobileS} {
     font-size: 20px;
@@ -184,9 +190,9 @@ export const CreateCard = styled.div`
   height: 30vh;
   justify-content: center;
   width: 120px;
-  font-family: 'Hind Siliguri', sans-serif;
+  font-family: "Hind Siliguri", sans-serif;
   font-weight: 600;
-  color: #76EAD7;
+  color: #76ead7;
 
   @media ${device.tablet} {
     width: 130px;
@@ -202,31 +208,6 @@ export const CreateCard = styled.div`
   }
 `;
 
-// Styles myrecs and myfaves tiles from profile
-// export const ProfileCard = styled.div`
-//   height: 30vh;
-//   justify-content: center;
-//   background-color: #393e46;
-//   color: #76ead7;
-//   font-weight: bold;
-//   width: 35vw;
-// font-family: 'Hind Siliguri', sans-serif;
-//   font-weight: 600;
-
-//   @media ${device.tablet} {
-//     width: 130px;
-//   }
-
-//   @media ${device.laptop} {
-//     width: 200px;
-//     height: 400px;
-//   }
-
-//   @media ${device.desktop} {
-//     width: 400px;
-//   }
-// `;
-
 // Styles Recommendation Card
 export const RecCardStyling = styled.div`
   height: 30vh;
@@ -234,7 +215,7 @@ export const RecCardStyling = styled.div`
   background-color: #393e46;
   color: #76ead7;
   width: 35vw;
-  font-family: 'Hind Siliguri', sans-serif;
+  font-family: "Hind Siliguri", sans-serif;
   font-weight: 600;
 
   @media ${device.tablet} {
@@ -257,7 +238,7 @@ export const FaveCardStyling = styled.div`
   justify-content: center;
   background-color: #393e46;
   color: #76ead7;
-  font-family: 'Hind Siliguri', sans-serif;
+  font-family: "Hind Siliguri", sans-serif;
   font-weight: 600;
   width: 35vw;
 
@@ -284,8 +265,9 @@ export const ViewContainer = styled.div`
   background-color: #eeeeee;
   width: 100vw;
   font-color: #393e46;
-  padding: 8%;
-  padding-top: 2%;
+  padding: 5%;
+  justify-content: center;
+  // padding-top: 2%;
 `;
 
 // Container in single rec and fave
@@ -298,20 +280,24 @@ export const RecContainer = styled.div`
 export const RecTitle = styled.h1`
   color: #76ead7;
   font-size: 6vw;
-  font-weight: bold;
+  font-family: Fira Sans, sans-serif;
+  font-weight: 800;
 `;
 
 // styles rec Favorite number and star
 export const Fave = styled.a`
   color: #c4fb6d;
   font-size: 6vw;
-  font-weight: bold;
+  font-family: Fira Sans, sans-serif;
+  font-weight: 800;
 `;
 
 // styles rec body text
 export const RecBody = styled.div`
   color: #eeeeee;
   font-size: 4vw;
+  font-family: Hind Siliguri, , sans-serif;
+  font-weight: 600;
 `;
 
 // styles rec edit button
@@ -319,7 +305,8 @@ export const EditBtn = styled.button`
   color: #393e46;
   background-color: #c4fb6d;
   margin: 10px;
-  font-weight: bold;
+  font-family: Hind Siliguri, , sans-serif;
+  font-weight: 600;
   width: 40vw;
 `;
 
@@ -328,7 +315,8 @@ export const DelBtn = styled.button`
   color: #393e46;
   background-color: #ff1919;
   margin: 10px;
-  font-weight: bold;
+  font-family: Hind Siliguri, , sans-serif;
+  font-weight: 600;
   width: 40vw;
 `;
 

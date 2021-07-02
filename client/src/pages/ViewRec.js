@@ -1,7 +1,7 @@
 import React from "react";
-// import "./style.css";
-import bbqImage from "../images/bbqplaceholder.png";
+import NavBar from "../components/NavBar/index";
 import {
+  BackToProfile,
   DelBtn,
   EditBtn,
   Fave,
@@ -10,17 +10,16 @@ import {
   RecContainer,
   RecTitle,
   ViewContainer,
-  BackToProfile
 } from "../components/styling/style";
-import NavBar from "../components/NavBar/index"
+import bbqImage from "../images/bbqplaceholder.png";
 
 const ViewRec = () => {
   return (
     <>
-    <NavBar />
-    <ViewContainer>
-    <BackToProfile>
-        <a href="backapage">Back to Profile</a>
+      <NavBar />
+      <ViewContainer>
+        <BackToProfile>
+          <a href="backapage">Back to Profile</a>
         </BackToProfile>
         <div className="container">
           <br></br>
@@ -41,18 +40,7 @@ const ViewRec = () => {
                 varius natoque penatibus et magnis dis parturient montes,
                 nascetur ridiculus mus.
               </p>
-              <ol>
-                <li>Lorem ipsum dolor sit amet</li>
-                <li>consectetur adipiscing elit</li>
-                <li>sed do eiusmod tempor</li>
-                <li>incididunt ut labore et dolore</li>
-                <li>Lorem ipsum dolor sit amet</li>
-                <li>consectetur adipiscing elit</li>
-                <li>sed do eiusmod tempor</li>
-                <li>incididunt ut laboreet dolore</li>
-                <li>Lorem ipsum dolor sit amet</li>
-                <li>consectetur adipiscing elit</li>
-              </ol>
+
               <div className="row text-center">
                 <EditBtn className="col">Edit</EditBtn>
                 <DelBtn className="col">Delete</DelBtn>
