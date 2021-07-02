@@ -11,8 +11,6 @@ import {
 } from "../components/styling/style";
 import { useAuth } from "../contexts/AuthContext";
 
-
-
 const Profile = () => {
   const [error, setError] = useState("");
   const { currentUser } = useAuth();
