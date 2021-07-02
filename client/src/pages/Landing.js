@@ -5,6 +5,8 @@ import {
   LandContainer,
   Opacity,
 } from "../../src/components/styling/style";
+import { Link } from "react-router-dom"
+import { LandingLinks } from "../components/styling/style";
 
 const style = {
   opacity: '.7'
@@ -17,6 +19,9 @@ function Landing() {
 
   return (
     <LandContainer className="text-center">
+      <LandingLinks className="text-center">
+          <Link to="/login">Login or Sign Up</Link>
+      </LandingLinks>
       <Opacity>
         <Center>
           <header>

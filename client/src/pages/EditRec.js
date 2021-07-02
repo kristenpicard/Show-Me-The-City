@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import EditForm from "../components/EditRec";
 import { GeneralContainer, BackToProfile } from "../components/styling/style";
 import NavBar from "../components/NavBar/index"
 
 const EditRec = () => {
+
+  const [photo, setPhoto] = useState("https://via.placeholder.com/300x175");
+
   return (
     <>
     <NavBar />
@@ -13,7 +16,7 @@ const EditRec = () => {
       </BackToProfile>
       <br></br>
       <br></br>
-      <EditForm />
+      <EditForm photo={photo} setPhoto={setPhoto}/>
     </GeneralContainer>
     </>
   );

@@ -11,6 +11,7 @@ function RecForm(props) {
   const locationRef = useRef();
   const titleRef = useRef();
   const synopsisRef = useRef();
+  const photo = props.photo;
   // created a variable and on load it is empty - default to empty
   let selectedCategory = "";
 
@@ -31,6 +32,7 @@ function RecForm(props) {
       location: locationRef.current.value,
       synopsis: synopsisRef.current.value,
       category: selectedCategory,
+      image: photo
     })
       .then((res) => {
         console.log(res);
