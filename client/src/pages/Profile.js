@@ -11,15 +11,6 @@ import {
 } from "../components/styling/style";
 import { useAuth } from "../contexts/AuthContext";
 
-const style1 = {
-  fontFamily: 'Fira Sans'
-}
-const style2 = {
-  fontFamily: 'PT Serif Caption'
-}
-const style3 = {
-  fontFamily: 'Hind Siliguri'
-}
 
 
 const Profile = () => {

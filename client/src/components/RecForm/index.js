@@ -68,9 +68,14 @@ function RecForm(props) {
           // This is the event listener which calls handleSelect when option is chosen
           onSelect={handleSelect}
         >
-          <Dropdown.Item eventKey="option-1">option-1</Dropdown.Item>
-          <Dropdown.Item eventKey="option-2">option-2</Dropdown.Item>
-          <Dropdown.Item eventKey="option-3">option 3</Dropdown.Item>
+          <Dropdown.Item eventKey="option-1">Art & Culture</Dropdown.Item>
+          <Dropdown.Item eventKey="option-2">Bars</Dropdown.Item>
+          <Dropdown.Item eventKey="option-3">Cinema</Dropdown.Item>
+          <Dropdown.Item eventKey="option-4">Coffee & Tea</Dropdown.Item>
+          <Dropdown.Item eventKey="option-5">Music</Dropdown.Item>
+          <Dropdown.Item eventKey="option-6">Landmarks</Dropdown.Item>
+          <Dropdown.Item eventKey="option-7">Restaurants</Dropdown.Item>
+          <Dropdown.Item eventKey="option-8">Shopping</Dropdown.Item>
         </DropdownButton>
       </div>
 

@@ -63,7 +63,7 @@ function Landing() {
             style={style}
             className="searchBox"
             type="text"
-            placeholder="Search for a city.."
+            placeholder="Search for a city..."
             name="search"
             // onKeyDown={(e) => e.key === "Enter" && onKeyDown}
           ></input>
