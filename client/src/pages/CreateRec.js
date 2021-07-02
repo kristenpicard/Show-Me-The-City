@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import RecForm from "../components/RecForm";
-import { ViewContainer, BackToProfile } from "../components/styling/style";
+import { ViewContainer, BackToProfile, FormFont } from "../components/styling/style";
 import NavBar from "../components/NavBar/index"
 
 const CreateRec = () => {
@@ -17,7 +17,9 @@ const CreateRec = () => {
       </BackToProfile>
       <br></br>
       <br></br>
+      <FormFont>
       <RecForm photo={photo} setPhoto={setPhoto}/>
+      </FormFont>
     </ViewContainer>
     </>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 
 const style = {
-  fontFamily: 'PT Serif Caption'
+  fontFamily: 'Hind Siliguri'
 }
 
 const CardCarousel = () => {
