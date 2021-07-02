@@ -13,7 +13,7 @@ const CreateRec = () => {
 
     <ViewContainer>
       <BackToProfile>
-      <a href="backapage">Back to Profile</a>
+      <a href="/profile">Back to Profile</a>
       </BackToProfile>
       <br></br>
       <br></br>

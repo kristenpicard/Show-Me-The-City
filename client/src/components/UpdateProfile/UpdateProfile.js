@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { Alert, Button, Card, Form } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
+import NavBar from "../../components/NavBar/index";
 import "./style.css";
 
 export default function UpdateProfile() {
@@ -50,6 +51,7 @@ export default function UpdateProfile() {
 
   return (
     <>
+      <NavBar />
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Update Profile</h2>
@@ -60,6 +62,7 @@ export default function UpdateProfile() {
               <Form.Control
                 ref={displayNameRef}
                 required
+                defaultValue={currentUser.displayName}
               />
             </Form.Group>
             <Form.Group id="email">
@@ -94,7 +97,7 @@ export default function UpdateProfile() {
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        <Link to="/">Cancel</Link>
+        <Link to="/profile">Cancel</Link>
       </div>
     </>
   );
