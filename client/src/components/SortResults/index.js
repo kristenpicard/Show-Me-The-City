@@ -16,7 +16,7 @@ const SortResults = () => {
           <Input
             className="col-12 input"
             type="text"
-            value="Search for an interest..."
+            placeholder="Search for an interest..."
           ></Input>
         </Form.Group>
         <div className="row form-group">

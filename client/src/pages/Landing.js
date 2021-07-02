@@ -11,9 +11,34 @@ const style = {
 }
 
 function Landing() {
-  function onKeyDown() {
-    window.location.href = "https://www.google.com";
-  }
+  // function onKeyDown() {
+  //   window.location.href = "https://www.google.com";
+  // }
+
+
+  // searchRec = (query) => {
+  //   API.getRec(query)
+  //     .then((res) =>
+  //       this.setState({
+  //         recs: res.data.items.map((recData) => this.makeRec(recData)),
+  //       })
+  //     )
+  //     .catch((err) => console.error(err));
+  // };
+
+  // handleInputChange = (event) => {
+  //   const name = event.target.name;
+  //   const value = event.target.value;
+  //   this.setState({
+  //     [name]: value,
+  //   });
+  // };
+
+  // handleFormSubmit = (event) => {
+  //   event.preventDefault();
+  //   this.searchRec(this.state.search);
+  // };
+
 
   return (
     <LandContainer className="text-center">
@@ -27,12 +52,15 @@ function Landing() {
             </H1>
           </header>
           <input
+            // search={this.state.search}
+            // handleInputChange={this.handleInputChange}
+            // handleFormSubmit={this.handleFormSubmit}
             style={style}
             className="searchBox"
             type="text"
             placeholder="Search for a city.."
             name="search"
-            onKeyDown={(e) => e.key === "Enter" && onKeyDown}
+            // onKeyDown={(e) => e.key === "Enter" && onKeyDown}
           ></input>
         </Center>
       </Opacity>
