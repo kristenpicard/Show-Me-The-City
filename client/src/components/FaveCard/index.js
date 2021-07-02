@@ -6,7 +6,7 @@ const FaveCard = (props) => {
     <>
       <div className="col">
         <FaveCardStyling className="card card-block text-center">
-        {props.title}!
+           {props.title}!
           <br></br>
           {props.favorites} ✰
           <br></br>
