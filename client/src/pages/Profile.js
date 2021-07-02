@@ -15,6 +15,8 @@ const Profile = () => {
   const [error, setError] = useState("");
   const { currentUser } = useAuth();
   const [photo, setPhoto] = useState("https://via.placeholder.com/300x175");
+  
+  console.log(currentUser);
 
   return (
     <>
@@ -22,7 +24,7 @@ const Profile = () => {
       <GeneralContainer>
         <ProfileHeader className="text-center">My Profile</ProfileHeader>
         <ProfileInfo>
-          <p>Name: John Smith</p>
+          <p>Name: {currentUser.displayName}</p>
           <i className="fas fa-edit"></i>
 
           <p>Email: {currentUser.email}</p>
