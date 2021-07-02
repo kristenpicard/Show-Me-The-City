@@ -27,7 +27,7 @@ function App() {
         <div>
           <AuthProvider>
             <Switch>
-              <PrivateRoute
+              <Route
                 exact
                 path="/home"
                 component={() => <Home handleInputChange={handleInputChange} />}
