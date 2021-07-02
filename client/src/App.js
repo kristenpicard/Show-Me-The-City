@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import { AuthProvider } from "../src/contexts/AuthContext";
 import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 import PrivateRoute from "./components/PrivateRoute/index";
-import { LandingLinks } from "./components/styling/style";
+
 import UpdateProfile from "./components/UpdateProfile/UpdateProfile";
 import Create from "./pages/CreateRec";
 import Edit from "./pages/EditRec";
@@ -23,9 +23,7 @@ function App() {
   return (
     <div>
       <Router>
-        <LandingLinks className="text-center">
-          <Link to="/login">Login or Sign Up</Link>
-        </LandingLinks>
+        
         <div>
           <AuthProvider>
             <Switch>
