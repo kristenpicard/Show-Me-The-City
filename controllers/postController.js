@@ -9,9 +9,10 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findByLocation: function(req, res) {
-    db.Recs.findByLocation(req.params.location)
+    console.log(req);
+    db.Recs.find({location: req.params.location})
       .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .catch(err => console.log(err.message));
   },
   findById: function(req, res) {
     db.Recs.findById(req.params.id)
