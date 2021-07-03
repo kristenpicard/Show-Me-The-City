@@ -32,9 +32,11 @@ export default function UpdateProfile() {
       promises.push(updatePassword(passwordRef.current.value));
     }
     if (displayNameRef.current.value) {
-      promises.push(currentUser.updateProfile({
-        displayName: displayNameRef.current.value
-      })) 
+      promises.push(
+        currentUser.updateProfile({
+          displayName: displayNameRef.current.value,
+        })
+      );
     }
 
     Promise.all(promises)
@@ -57,7 +59,7 @@ export default function UpdateProfile() {
           <h2 className="text-center mb-4">Update Profile</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
-          <Form.Group id="display-name">
+            <Form.Group id="display-name">
               <Form.Label className="title">Display Name</Form.Label>
               <Form.Control
                 ref={displayNameRef}

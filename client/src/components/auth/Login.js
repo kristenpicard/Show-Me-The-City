@@ -4,7 +4,6 @@ import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import "./style.css";
 
-
 export default function Login() {
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -46,7 +45,9 @@ export default function Login() {
             <Button disabled={loading} className="w-100 button" type="submit">
               Log In
             </Button>
-            <Button className="w-100 button" onClick={googleLogin}>Log In With Google</Button>
+            <Button className="w-100 button" onClick={googleLogin}>
+              Log In With Google
+            </Button>
           </Form>
           <div className="w-100 text-center mt-2">
             <Link to="/forgot-password">Forgot Password?</Link>
