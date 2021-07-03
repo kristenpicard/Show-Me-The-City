@@ -25,13 +25,16 @@ module.exports = {
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-  findUserRecs: function (req, res) {
-    db.User.find(req.params.id)
-      .populate("recs").exec((err, recs) => {
-        console.log("Populated User " + recs);
-      })
-  },
 };
+
+
+// findByLocation: function(req, res) {
+//   console.log(req);
+//   db.Recs.find({location: req.params.location})
+//     .then(dbModel => res.json(dbModel))
+//     .catch(err => console.log(err.message));
+// },
+
 
 // router.post('/', async (req, res) => {
 //   try {

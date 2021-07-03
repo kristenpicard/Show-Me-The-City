@@ -10,13 +10,23 @@ import {
   ProfileInfo,
 } from "../components/styling/style";
 import { useAuth } from "../contexts/AuthContext";
+import API from "../utils/API";
 
 const Profile = () => {
+
   const [error, setError] = useState("");
   const { currentUser } = useAuth();
   const [photo, setPhoto] = useState("https://via.placeholder.com/300x175");
   
-  console.log(currentUser);
+  // console.log(currentUser);
+
+  API.getPostsByUser(
+    "GYWjLulVCZQmPKH9tUMnWnqd0u63"
+  )
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => console.log(err));
 
   return (
     <>

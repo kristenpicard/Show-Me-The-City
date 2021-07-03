@@ -12,6 +12,9 @@ export default {
   getPostsByLocation: function(location) {
     return axios.get("/api/posts/loc/" + location);
   },
+  getPostsByUser: function(userID) {
+    return axios.get("/api/posts/user/" + userID);
+  },
   // Deletes the post with the given id
   deletePost: function(id) {
     return axios.delete("/api/posts/" + id);

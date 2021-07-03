@@ -19,6 +19,11 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findUserRecs: function (req, res) {
+    db.Recs.find({userID: req.params.userID})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => console.log(err.message));
+  },
   create: function(req, res) {
     db.Recs.create(req.body)
       .then(dbModel => res.json(dbModel))

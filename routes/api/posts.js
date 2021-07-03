@@ -18,4 +18,9 @@ router
   .route("/loc/:location")
   .get(postController.findByLocation);
 
+// Matches with "/api/posts/:userID"
+router
+  .route("/user/:userID")
+  .get(postController.findUserRecs);
+
 module.exports = router;

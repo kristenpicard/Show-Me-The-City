@@ -4,6 +4,7 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import API from "../../utils/API";
 import Cloudinary from "../Cloudinary";
 import { Button, TextArea } from "../styling/style";
+import { useAuth } from "../../contexts/AuthContext";
 
 // Form for a user to add a recommendation/post
 function RecForm(props) {
@@ -12,6 +13,7 @@ function RecForm(props) {
   const titleRef = useRef();
   const synopsisRef = useRef();
   const photo = props.photo;
+  const user = useAuth();
   // created a variable and on load it is empty - default to empty
   let selectedCategory = "";
 
@@ -32,9 +34,11 @@ function RecForm(props) {
       location: locationRef.current.value,
       synopsis: synopsisRef.current.value,
       category: selectedCategory,
-      image: photo
+      image: photo,
+      userID: user.currentUser.uid
     })
       .then((res) => {
+        console.log(user);
         console.log(res);
       })
       .catch((err) => console.log(err));
