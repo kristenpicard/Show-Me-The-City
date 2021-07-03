@@ -45,9 +45,7 @@ function Landing() {
 
   return (
     <LandContainer className="text-center">
-      <Link style={styleLink} to="/login">
-        Login or Sign Up
-      </Link>
+      
       <Opacity>
         <Center>
           <header>
@@ -68,6 +66,10 @@ function Landing() {
             name="search"
             // onKeyDown={(e) => e.key === "Enter" && onKeyDown}
           ></input>
+          <br/><br/><br/>          
+          <a style={styleLink} href="/login">
+            Login or Sign Up
+          </a>
         </Center>
       </Opacity>
     </LandContainer>
