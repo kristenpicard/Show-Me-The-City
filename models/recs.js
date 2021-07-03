@@ -13,6 +13,7 @@ const RecsSchema = new Schema({
   category: String,
   list: Array,
   favorited: Number,
+  userID: String
 });
 
 const Recs = mongoose.model("Recs", RecsSchema);
