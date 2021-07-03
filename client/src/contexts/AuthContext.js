@@ -9,15 +9,24 @@ export function useAuth() {
   return useContext(AuthContext);
 }
 
+
+
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
   const history = useHistory();
 
-  function signup(email, password) {
-    return auth
-      .createUserWithEmailAndPassword(email, password)
-      .then(login(email, password));
+  async function signup(email, password, displayName) {
+    let person = await auth
+    .createUserWithEmailAndPassword(email, password)
+    .catch(err => console.error(err.message))
+    
+    let updated = await person.user.updateProfile({
+      displayName
+    }).catch(err => console.error(err.message))
+    
+    history.push("/Home");
+    return updated
   }
 
   function login(email, password) {

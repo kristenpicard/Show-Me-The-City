@@ -5,10 +5,12 @@ import { useAuth } from "../../contexts/AuthContext";
 import "./style.css";
 
 export default function Signup() {
+  const firstNameRef = useRef();
+  const lastNameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const { signup } = useAuth();
+  const { signup, setDisplayState } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const history = useHistory();
@@ -24,7 +26,10 @@ export default function Signup() {
       setError("");
       setLoading(true);
       
-      await signup(emailRef.current.value, passwordRef.current.value);
+      await signup(
+        emailRef.current.value, 
+        passwordRef.current.value,
+        `${firstNameRef.current.value} ${lastNameRef.current.value}`);
       history.push("/Home")
     } catch {
       setError("Failed to create a new account");
@@ -39,6 +44,14 @@ export default function Signup() {
           <h2 className="text-center mb-4">Sign Up</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
+          <Form.Group id="first-name">
+              <Form.Label className="title">First Name</Form.Label>
+              <Form.Control ref={firstNameRef} required />
+            </Form.Group>
+            <Form.Group id="last-name">
+              <Form.Label className="title">Last Name</Form.Label>
+              <Form.Control ref={lastNameRef} required />
+            </Form.Group>
             <Form.Group id="email">
               <Form.Label className="title">Email</Form.Label>
               <Form.Control type="email" ref={emailRef} required />
