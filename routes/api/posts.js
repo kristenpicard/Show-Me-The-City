@@ -15,7 +15,7 @@ router
 
 // Matches with "/api/posts/:location"
 router
-  .route("/:location")
+  .route("/loc/:location")
   .get(postController.findByLocation);
 
 module.exports = router;

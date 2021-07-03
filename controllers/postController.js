@@ -10,9 +10,9 @@ module.exports = {
   },
   findByLocation: function(req, res) {
     console.log(req);
-    db.Recs.findByLocation(req.body)
+    db.Recs.find({location: req.params.location})
       .then(dbModel => res.json(dbModel))
-      .catch(err => console.error(err.message));
+      .catch(err => console.log(err.message));
   },
   findById: function(req, res) {
     db.Recs.findById(req.params.id)

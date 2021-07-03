@@ -10,7 +10,7 @@ export default {
     return axios.get("/api/posts/" + id);
   },
   getPostsByLocation: function(location) {
-    return axios.get("/api/posts/" + location);
+    return axios.get("/api/posts/loc/" + location);
   },
   // Deletes the post with the given id
   deletePost: function(id) {
