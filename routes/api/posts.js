@@ -13,4 +13,9 @@ router
   .put(postController.update)
   .delete(postController.remove);
 
+// Matches with "/api/posts/:location"
+router
+  .route("/:location")
+  .get(postController.findByLocation);
+
 module.exports = router;
