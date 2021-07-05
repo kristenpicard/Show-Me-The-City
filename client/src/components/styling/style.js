@@ -73,7 +73,6 @@ export const GeneralContainer = styled.div`
   background-color: #eeeeee;
   background-position: center;
   height: 100vh;
-  width: 100vw;
   font-color: #393e46;
   padding: 8%;
   padding-top: 2%;
@@ -263,7 +262,6 @@ export const ImgRec = styled.img`
 // This is a container used in the view-rec and view-fave pages
 export const ViewContainer = styled.div`
   background-color: #eeeeee;
-  width: 100vw;
   font-color: #393e46;
   padding: 5%;
   justify-content: center;
