@@ -16,7 +16,7 @@ function NavBar(props) {
 
     try {
       await logout()
-      history.push('/Login');
+      history.push('/');
     } catch {
       setError("Failed to log out");
     }
