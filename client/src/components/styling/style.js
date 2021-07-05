@@ -62,6 +62,7 @@ export const Center = styled.div`
 // Styles Login and Signup buttons on landing page
 export const LandingLinks = styled.div`
   color: #eeeeee;
+  justify-content: space-around;
   text-decoration: underline;
   background-color: rgba(3, 35, 42);
   font-family: "Hind Siliguri", sans-serif;

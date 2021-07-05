@@ -52,11 +52,12 @@ function Landing() {
         <Center>
           <header>
             <H1>
-              Show me
-              <br></br>
-              the city!
+              Show Me
+              <br/>
+              the City
             </H1>
           </header>
+          <br/>
           <input
             // search={this.state.search}
             // handleInputChange={this.handleInputChange}
