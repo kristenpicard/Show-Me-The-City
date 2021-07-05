@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Alert, Button, Card, Form } from "react-bootstrap";
+import { GoogleLoginButton } from "react-social-login-buttons";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import "./style.css";
@@ -46,7 +47,8 @@ export default function Login() {
             <Button disabled={loading} className="w-100 button" type="submit">
               Log In
             </Button>
-            <Button className="w-100 button" onClick={googleLogin}>Log In With Google</Button>
+            <GoogleLoginButton onClick={googleLogin}>Log In With Google</GoogleLoginButton>
+            {/* <Button className="w-100 button" onClick={googleLogin}>Log In With Google</Button> */}
           </Form>
           <div className="w-100 text-center mt-2">
             <Link to="/forgot-password">Forgot Password?</Link>
