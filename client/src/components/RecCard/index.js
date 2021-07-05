@@ -1,7 +1,10 @@
 import React from "react";
 import { RecCardStyling } from "../styling/style";
 
-const RecCard = (props) => {
+function RecCard(props) {
+  console.log(props);
+  props.data.map(({title}) => {
+
   return (
     <>
       <div className="col">
@@ -13,6 +16,7 @@ const RecCard = (props) => {
       </div>
     </>
   );
-};
+});
+}
 
 export default RecCard;

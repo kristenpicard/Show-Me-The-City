@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <>
       {!currentUser ? 
-        <NavBar login={login} /> : <NavBar profile={profile} logout={logoutLink} />
+        <NavBar isProfile={false} login={login} /> : <NavBar isProfile={false} profile={profile} logout={logoutLink} />
       }
 
       <SearchBox city={city} setCity={setCity}/>
