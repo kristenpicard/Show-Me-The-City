@@ -32,7 +32,7 @@ const Profile = () => {
 
   return (
     <>
-      <NavBar />
+      <NavBar isProfile={true}/>
       <GeneralContainer>
         <ProfileHeader className="text-center">My Profile</ProfileHeader>
         <ProfileInfo>

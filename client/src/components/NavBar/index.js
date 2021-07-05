@@ -6,41 +6,39 @@ import { useAuth } from "../../contexts/AuthContext";
 function NavBar(props) {
   const [error, setError] = useState("");
   const { logout } = useAuth();
-  // const history = useHistory();
+  const history = useHistory();
 
   const login = props.login;
+  const profile = props.isProfile;
 
-  // async function handleLogout() {
-  //   setError("");
+  async function handleLogout() {
+    setError("");
 
-  //   try {
-  //     await logout()
-  //     history.push('/Login');
-  //   } catch {
-  //     setError("Failed to log out");
-  //   }
-  // }
+    try {
+      await logout()
+      history.push('/Login');
+    } catch {
+      setError("Failed to log out");
+    }
+  }
 
   return (
     <>
       <Nav className="navbar">
-        {login ? (
-          <div>
-          {/* if user not logged in */}
-            <a className="login" href={props.login}>
-              Login
-            </a>
-          </div> 
+        {profile ? (
+          <>
+            <a href="/home">Home</a>
+            <a href='/' onClick={handleLogout}>Logout</a>
+          </>
+        ) : login ? (
+          <>
+            <a href="/login">Login</a>
+          </>
         ) : (
-          <div>
-            {/* if logged in */}
-            <a className="profile" href={props.profile}>
-              Profile
-            </a>
-            <a onClick={logout} className="logout" href={props.logoutLink}>
-              Logout
-            </a>
-          </div>
+          <>
+            <a href="/profile">Profile</a>
+            <a href="/" onClick={handleLogout}>Logout</a>
+          </>
         )}
       </Nav>
     </>
