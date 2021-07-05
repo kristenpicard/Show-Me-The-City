@@ -16,9 +16,9 @@ const styleLink = {
 };
 
 function Landing() {
-  // function onKeyDown() {
-  //   window.location.href = "https://www.google.com";
-  // }
+  function onKeyDown() {
+    <a href="./home"></a>
+  }
 
   // searchRec = (query) => {
   //   API.getRec(query)
@@ -66,7 +66,7 @@ function Landing() {
             type="text"
             placeholder="Search for a city..."
             name="search"
-            // onKeyDown={(e) => e.key === "Enter" && onKeyDown}
+            onKeyDown={(e) => e.key === "Enter" && onKeyDown}
           ></input>
         </Center>
       </Opacity>

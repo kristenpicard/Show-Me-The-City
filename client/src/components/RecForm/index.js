@@ -66,7 +66,7 @@ function RecForm(props) {
       <div className="form-group">
 
         <DropdownButton
-          className="DDStyle"
+          className="DDButton"
           alignRight
           title="Category"
           id="dropdownMenuButton"
