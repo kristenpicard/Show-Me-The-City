@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import FaveCard from "../components/FaveCard/index";
 import NavBar from "../components/NavBar/index";
@@ -17,16 +17,18 @@ const Profile = () => {
   const [error, setError] = useState("");
   const { currentUser } = useAuth();
   const [photo, setPhoto] = useState("https://via.placeholder.com/300x175");
-  
+  const [data, setData] = useState([{}]);
   // console.log(currentUser);
 
-  API.getPostsByUser(
-    "GYWjLulVCZQmPKH9tUMnWnqd0u63"
-  )
-  .then((res) => {
-    console.log(res);
-  })
-  .catch((err) => console.log(err));
+  useEffect(() => {
+    API.getPostsByUser(currentUser.uid)
+    // .then(res => res.json())
+    .then(dataArr => {
+      setData({dataArr})
+      console.log(data)
+    })
+
+  }, [currentUser])
 
   return (
     <>
@@ -55,12 +57,12 @@ const Profile = () => {
               </CreateCard>
             </div>
             {/* Pseudo code to map recs!!!!! See RecCard also */}
-            {/* {this.state.recommendations.map((data) => (
-              <RecCard 
-              title={data.title} 
-              favorites={data.favorites}
-               />
-            ))} */}
+            {/* {data.map(({title}) => { */}
+              {/* <RecCard 
+              data={data}
+              /> */}
+            {/* })
+            }; */}
           </div>
         </div>
         <ProfileHeader classNameName="text-center">My Favorites</ProfileHeader>
