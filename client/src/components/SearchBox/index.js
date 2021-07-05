@@ -1,7 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { handleKeyDown } from "react";
 // import { State } from "react";
 import { TopSearch } from "../styling/style";
-import API from "../../utils/API";
+// import API from "../../utils/API";
 
 const style = {
   fontFamily: 'Hind Siliguri'
@@ -9,6 +9,14 @@ const style = {
 
 
 const SearchBox = (props) => {
+
+  const Input = () => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Enter') {
+        console.log('Yas queen')
+      }
+    }
+  }
   // let cityValue;
   
   // const cityRef=useRef()
@@ -40,10 +48,11 @@ const SearchBox = (props) => {
   return (
     <TopSearch>
       <input 
-      // onChange={searchRec()}
+      onKeyDown={handleKeyDown} 
+        // onChange={searchRec()}
         // search={this.state.search}
         // handleInputChange={this.handleInputChange}
-        // handleFormSubmit={this.handleFormSubmit}
+        // handleFormSubmit={this.handleFormSubmit} 
         className="col-12" type="text" style={style} placeholder="Search new city..." />
     </TopSearch>
   );
