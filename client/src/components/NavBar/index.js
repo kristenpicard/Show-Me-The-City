@@ -5,55 +5,44 @@ import { useAuth } from "../../contexts/AuthContext";
 
 function NavBar(props) {
   const [error, setError] = useState("");
-  const { currentUser, logout } = useAuth();
+  const { logout } = useAuth();
   const history = useHistory();
+
+  const login = props.login;
+  const profile = props.isProfile;
 
   async function handleLogout() {
     setError("");
 
     try {
       await logout()
-      history.push('/Login');
+      history.push('/');
     } catch {
       setError("Failed to log out");
     }
   }
 
   return (
-    <Nav className="navbar">
-      {/* user ternary here */}
+    <>
+      <Nav className="navbar">
+        {profile ? (
+          <>
+            <a href="/home">Home</a>
+            <a href='/' onClick={handleLogout}>Logout</a>
+          </>
+        ) : login ? (
+          <>
+            <a href="/login">Login</a>
+          </>
+        ) : (
+          <>
+            <a href="/profile">Profile</a>
+            <a href="/" onClick={handleLogout}>Logout</a>
+          </>
+        )}
+      </Nav>
+    </>
 
-      {/* {window.location.href("localhost:3000/profile") ? (
-        <div>
-          {/* if on /profile */}
-          {/* <a className="home" href="/home">
-            Home
-          </a>
-          <a onClick={logout} className="logout" href="/">
-            Logout
-          </a>
-        </div> */}
-      {/* ) : ( */}
-        !currentUser ? (
-          <div>
-            {/* if user not logged in */}
-            <a className="login" href="/login">
-              Login
-            </a>
-          </div>
-          ) : (
-          <div>
-            {/* if logged in */}
-            <a className="profile" href="/profile">
-              Profile
-            </a>
-            <a onClick={logout} className="logout" href="/">
-              Logout
-            </a>
-          </div>
-          )
-      {/* )} */}
-    </Nav>
   );
 }
 
