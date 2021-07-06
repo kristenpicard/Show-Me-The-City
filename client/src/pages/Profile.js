@@ -17,16 +17,15 @@ const Profile = () => {
   const [error, setError] = useState("");
   const { currentUser } = useAuth();
   const [photo, setPhoto] = useState("https://via.placeholder.com/300x175");
-  const [data, setData] = useState([{}]);
+  const [data, setData] = useState([]);
   // console.log(currentUser);
 
   useEffect(() => {
     API.getPostsByUser(currentUser.uid)
-    .then(dataArr => {
-      setData({dataArr})
-      console.log(data)
+    .then(res => {
+      setData(res.data)
+      console.log(res.data)
     })
-
   }, [currentUser])
 
   return (
@@ -56,12 +55,7 @@ const Profile = () => {
               </CreateCard>
             </div>
             {/* Pseudo code to map recs!!!!! See RecCard also */}
-            {/* {data.map(({title}) => { */}
-              {/* <RecCard 
-              data={data}
-              /> */}
-            {/* })
-            }; */}
+              { data.length ? data.map ( x => <RecCard data={x} /> ) : <div> Loading... </div> }
           </div>
         </div>
         <ProfileHeader classNameName="text-center">My Favorites</ProfileHeader>
