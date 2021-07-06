@@ -3,7 +3,7 @@ import { RecCardStyling } from "../styling/style";
 
 function RecCard(props) {
   console.log(props);
-  // props.data.map(({ title }) => {
+
     return (
       <>
         <div className="col">
@@ -15,7 +15,6 @@ function RecCard(props) {
       </>
     );
   }
-//   );
-// }
+
 
 export default RecCard;

@@ -1,19 +1,22 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import API from "../../utils/API";
+import HomeCard from "../../components/HomeCard/index";
 
 const style = {
   fontFamily: 'Hind Siliguri'
 }
 
-const CardCarousel = () => {
+const CardCarousel = (props) => {
+  const [data, setData] = useState([]);
+  console.log(props);
 
-  API.getPostsByLocation(
-    "Columbus, Ohio"
-  )
-  .then((res) => {
-    console.log(res);
-  })
-  .catch((err) => console.log(err));
+  useEffect(() => {
+    API.getPostsByLocation(props.location)
+    .then(res => {
+      setData(res.data)
+      console.log(res)
+    })
+  }, [props.location])
 
   return (
     <div style={style}>
@@ -23,15 +26,10 @@ const CardCarousel = () => {
         data-ride="carousel"
       >
         <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img className="d-block w-100" src="..." alt="First slide" />
-          </div>
-          <div className="carousel-item">
-            <img className="d-block w-100" src="..." alt="Second slide" />
-          </div>
-          <div className="carousel-item">
-            <img className="d-block w-100" src="..." alt="Third slide" />
-          </div>
+          
+        { data.length ? data.map ( x => <HomeCard data={x} /> ) : <div> Loading... </div> }
+
+
         </div>
         <a
           className="carousel-control-prev"

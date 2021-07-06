@@ -15,10 +15,8 @@ import ViewFavorite from "./pages/ViewFavorite";
 import ViewRec from "./pages/ViewRec";
 
 function App() {
-  function handleInputChange(event) {
-    const city = event.target.city;
-    return city;
-  }
+
+  const [location, setLocation] = useState("");
 
   return (
     <div>
@@ -30,7 +28,7 @@ function App() {
               <Route
                 exact
                 path="/home"
-                component={() => <Home handleInputChange={handleInputChange} />}
+                component={() => <Home location={location} setLocation={setLocation} />}
               />
               <PrivateRoute exact path="/profile" component={Profile} />
               <PrivateRoute path="/create" component={Create} />
@@ -42,7 +40,7 @@ function App() {
                 exact
                 path="/"
                 component={() => (
-                  <Landing handleInputChange={handleInputChange} />
+                  <Landing location={location} setLocation={setLocation} />
                 )}
               />
               <Route exact path="/login" component={Login} />
