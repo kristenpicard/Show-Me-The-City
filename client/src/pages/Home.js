@@ -6,7 +6,7 @@ import SortResults from "../components/SortResults";
 import { GeneralContainer } from "../components/styling/style";
 import { useAuth } from "../contexts/AuthContext";
 
-const Home = () => {
+const Home = (props) => {
 
   const [city, setCity] = useState("");
   const { currentUser, logout } = useAuth();
@@ -24,7 +24,7 @@ const Home = () => {
       <SearchBox city={city} setCity={setCity}/>
       <GeneralContainer className="text-center">
         <SortResults />
-        <CardCarousel city={city}/>
+        <CardCarousel location={props.location} setLocation={props.setLocation}/>
       </GeneralContainer>
     </>
   );

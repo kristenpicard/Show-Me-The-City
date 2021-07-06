@@ -18,6 +18,11 @@ const SortResults = () => {
             type="text"
             placeholder="Search for an interest..."
           ></Input>
+          {/* <a
+          onClick={handleClick}
+          href="/home"
+          >Search
+          </a> */}
         </Form.Group>
         <div className="row form-group">
           <div className="dropdown col">

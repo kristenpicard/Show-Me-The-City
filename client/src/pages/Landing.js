@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, {useRef} from "react";
+import { useHistory } from "react-router-dom";
 import {
   Center,
   H1,
@@ -15,33 +15,15 @@ const styleLink = {
   color: "white",
 };
 
-function Landing() {
-  function onKeyDown() {
-    <a href="./home"></a>
+function Landing(props) {
+  const history=useHistory();
+
+  const locationRef = useRef();
+
+  function handleClick() {
+    props.setLocation(locationRef.current.value);
+    history.push("/home")
   }
-
-  // searchRec = (query) => {
-  //   API.getRec(query)
-  //     .then((res) =>
-  //       this.setState({
-  //         recs: res.data.items.map((recData) => this.makeRec(recData)),
-  //       })
-  //     )
-  //     .catch((err) => console.error(err));
-  // };
-
-  // handleInputChange = (event) => {
-  //   const name = event.target.name;
-  //   const value = event.target.value;
-  //   this.setState({
-  //     [name]: value,
-  //   });
-  // };
-
-  // handleFormSubmit = (event) => {
-  //   event.preventDefault();
-  //   this.searchRec(this.state.search);
-  // };
 
   return (
     <LandContainer className="text-center">
@@ -60,13 +42,18 @@ function Landing() {
             // search={this.state.search}
             // handleInputChange={this.handleInputChange}
             // handleFormSubmit={this.handleFormSubmit}
+            ref={locationRef}
             style={style}
             className="searchBox"
             type="text"
             placeholder="Search for a city..."
             name="search"
-            onKeyDown={(e) => e.key === "Enter" && onKeyDown}
+            // onKeyDown={(e) => e.key === "Enter" && onKeyDown}
           ></input>
+          <button
+          onClick={handleClick}
+          >Search
+          </button>
           <br/><br/><br/>          
           <a style={styleLink} href="/login">
             Login or Sign Up
