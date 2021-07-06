@@ -22,7 +22,6 @@ const Profile = () => {
 
   useEffect(() => {
     API.getPostsByUser(currentUser.uid)
-    // .then(res => res.json())
     .then(dataArr => {
       setData({dataArr})
       console.log(data)
