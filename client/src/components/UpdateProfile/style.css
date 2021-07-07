@@ -29,3 +29,27 @@ h2 {
   font-family: inherit;
   font-size: inherit;
 }
+p {
+  font-size: 1rem;
+}
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 10px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.breadcrumb {
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: .75rem 1rem;
+  padding-top: 0.75rem;
+  padding-right: 1rem;
+  padding-bottom: 0.15rem;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  list-style: none;
+  background-color: #ecf0f1;
+  border-radius: .25rem;
+}

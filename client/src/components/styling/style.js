@@ -278,7 +278,7 @@ export const RecContainer = styled.div`
 // styles rec title
 export const RecTitle = styled.h1`
   color: #76ead7;
-  font-size: 6vw;
+  font-size: 1.5rem;
   font-family: Fira Sans, sans-serif;
   font-weight: 800;
 `;
@@ -286,7 +286,7 @@ export const RecTitle = styled.h1`
 // styles rec Favorite number and star
 export const Fave = styled.a`
   color: #c4fb6d;
-  font-size: 6vw;
+  font-size: 1.5rem;
   font-family: Fira Sans, sans-serif;
   font-weight: 800;
 `;
@@ -305,6 +305,7 @@ export const EditBtn = styled.button`
   background-color: #c4fb6d;
   margin: 10px;
   font-family: Hind Siliguri, , sans-serif;
+  font-size: 1.5rem;
   font-weight: 600;
   width: 40vw;
 `;
