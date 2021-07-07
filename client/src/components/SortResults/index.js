@@ -7,10 +7,12 @@ const style = {
   fontFamily: 'Hind Siliguri'
 }
 
-const SortResults = () => {
+const SortResults = (props) => {
+
+
   return (
     <>
-      <HomeTitle>Showing local favorites in COLUMBUS, OH</HomeTitle>
+      <HomeTitle>Showing local favorites in {props.location}</HomeTitle>
       <Form style={style}>
         <Form.Group>
           <Input
@@ -18,11 +20,7 @@ const SortResults = () => {
             type="text"
             placeholder="Search for an interest..."
           ></Input>
-          {/* <a
-          onClick={handleClick}
-          href="/home"
-          >Search
-          </a> */}
+       
         </Form.Group>
         <div className="row form-group">
           <div className="dropdown col">

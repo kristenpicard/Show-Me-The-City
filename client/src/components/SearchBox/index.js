@@ -1,24 +1,22 @@
-import React, { handleKeyDown } from "react";
+import React, { useRef } from "react";
 // import { State } from "react";
 import { TopSearch } from "../styling/style";
 // import API from "../../utils/API";
 
 const style = {
-  fontFamily: 'Hind Siliguri'
-}
-
+  fontFamily: "Hind Siliguri",
+};
 
 const SearchBox = (props) => {
-
-  const Input = () => {
-    const handleKeyDown = (event) => {
-      if (event.key === 'Enter') {
-        console.log('Yas queen')
-      }
-    }
-  }
+  // const Input = () => {
+  //   const handleKeyDown = (event) => {
+  //     if (event.key === 'Enter') {
+  //       console.log('Yas queen')
+  //     }
+  //   }
+  // }
   // let cityValue;
-  
+
   // const cityRef=useRef()
   // setCity(cityRef)
 
@@ -32,28 +30,33 @@ const SearchBox = (props) => {
 
   // some function to capture input & store in variable
   // const searchRec = () => {
-    // other stuff that sets cityValue
-    // return cityValue;
+  // other stuff that sets cityValue
+  // return cityValue;
   // }
   // API request with variable
   // API.getPosts({
   //     findAll(cityValue, res)
   // })
 
-
   // let handleFormSubmit = (event) => {
   //   event.preventDefault();
   //   this.searchRec(this.state.search);
   // };
+  const locationRef = useRef();
+
+  function handleClick() {
+    props.setLocation(locationRef.current.value);
+  }
   return (
     <TopSearch>
-      <input 
-      onKeyDown={handleKeyDown} 
-        // onChange={searchRec()}
-        // search={this.state.search}
-        // handleInputChange={this.handleInputChange}
-        // handleFormSubmit={this.handleFormSubmit} 
-        className="col-12" type="text" style={style} placeholder="Search new city..." />
+      <input
+        ref={locationRef}
+        className="col-12"
+        type="text"
+        style={style}
+        placeholder="Search new city..."
+      />
+      <button onClick={handleClick}>Search</button>
     </TopSearch>
   );
 };
