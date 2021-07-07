@@ -19,7 +19,7 @@ const ViewFavorite = () => {
       <NavBar />
       <ViewContainer>
       <Breadcrumb>
-        <Breadcrumb.Item href="backapage">Back to Profile</Breadcrumb.Item>
+        <Breadcrumb.Item href="/profile">Back to Profile</Breadcrumb.Item>
         </Breadcrumb>
          <Container> 
           <div className="container">
