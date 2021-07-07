@@ -1,4 +1,5 @@
 import React from "react";
+import { FacebookShareButton, FacebookIcon } from "react-share";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import Container from "react-bootstrap/Container";
 import NavBar from "../components/NavBar/index";
@@ -12,6 +13,8 @@ import {
   ViewContainer,
 } from "../components/styling/style";
 import bbqImage from "../images/bbqplaceholder.png";
+
+const shareUrl = "https://www.facebook.com/sharer/sharer.php?u=show-me-the-city.herokuapp.com/"
 
 const ViewFavorite = () => {
   return (
@@ -42,7 +45,9 @@ const ViewFavorite = () => {
                 </p>
 
                 <div className="text-center">
-                  <EditBtn>Share</EditBtn>
+                  <FacebookShareButton url={shareUrl}>
+                    <FacebookIcon size={40} round={true}></FacebookIcon>
+                  </FacebookShareButton>
                 </div>
               </RecBody>
             </RecContainer>
