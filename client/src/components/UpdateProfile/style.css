@@ -7,23 +7,23 @@
 h2 {
   color: #76ead7;
   font-size: xx-large;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-weight: 800;
 }
 
 .title {
   color: #76ead7;
   font-size: 20px;
-  font-family: 'Hind Siliguri', sans-serif;
+  font-family: "Hind Siliguri", sans-serif;
 }
 
 .button {
   background-color: #c4fb6d;
   color: #393e46;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-weight: 800;
 }
-#dropdownMenuButton{
+#dropdownMenuButton {
   color: #76ead7;
   background-color: #393e46;
   font-family: inherit;
@@ -32,7 +32,12 @@ h2 {
 p {
   font-size: 1rem;
 }
-.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl {
   width: 100%;
   padding-left: 10px;
   margin-right: auto;
@@ -42,7 +47,7 @@ p {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  padding: .75rem 1rem;
+  padding: 0.75rem 1rem;
   padding-top: 0.75rem;
   padding-right: 1rem;
   padding-bottom: 0.15rem;
@@ -50,5 +55,5 @@ p {
   margin-bottom: 1rem;
   list-style: none;
   background-color: #ecf0f1;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
 }

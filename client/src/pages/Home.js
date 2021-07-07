@@ -1,4 +1,3 @@
-import { PromiseProvider } from "mongoose";
 import React, { useState } from "react";
 import CardCarousel from "../components/CardCarousel";
 import NavBar from "../components/NavBar";

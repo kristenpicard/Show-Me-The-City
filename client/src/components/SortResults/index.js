@@ -2,14 +2,11 @@ import React from "react";
 import { Form } from "react-bootstrap";
 import { DDButton, HomeTitle, Input } from "../styling/style";
 
-
 const style = {
-  fontFamily: 'Hind Siliguri'
-}
+  fontFamily: "Hind Siliguri",
+};
 
 const SortResults = (props) => {
-
-
   return (
     <>
       <HomeTitle>Showing local favorites in {props.location}</HomeTitle>
@@ -20,7 +17,6 @@ const SortResults = (props) => {
             type="text"
             placeholder="Search for an interest..."
           ></Input>
-       
         </Form.Group>
         <div className="row form-group">
           <div className="dropdown col">

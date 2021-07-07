@@ -1,8 +1,9 @@
 import React, { useRef, useState } from "react";
 import { Alert, Button, Card, Form } from "react-bootstrap";
-import { GoogleLoginButton } from "react-social-login-buttons";
 import { Link, useHistory } from "react-router-dom";
+import { GoogleLoginButton } from "react-social-login-buttons";
 import { useAuth } from "../../contexts/AuthContext";
+import { GoogleLoginButtonContainer } from "../styling/style";
 import "./style.css";
 
 export default function Login() {
@@ -46,8 +47,11 @@ export default function Login() {
             <Button disabled={loading} className="w-100 button" type="submit">
               Log In
             </Button>
-            <GoogleLoginButton onClick={googleLogin}>Log In With Google</GoogleLoginButton>
-            {/* <Button className="w-100 button" onClick={googleLogin}>Log In With Google</Button> */}
+            <GoogleLoginButtonContainer>
+              <GoogleLoginButton onClick={googleLogin}>
+                <span>Log In With Google</span>
+              </GoogleLoginButton>
+            </GoogleLoginButtonContainer>
           </Form>
           <div className="w-100 text-center mt-2">
             <Link to="/forgot-password">Forgot Password?</Link>

@@ -4,8 +4,14 @@ const Schema = mongoose.Schema;
 const RecsSchema = new Schema({
   image: String,
   location: String,
-  title: String,
-  synopsis: String,
+  title: {
+    type:String, 
+    validate: [({ length }) => length <= 40, "Title must be 40 characters or less"]
+  },
+  synopsis: {
+    type: String,
+    validate: [({ length }) => length <= 500, "Must be 500 characters or less"]
+  },
   date: Date,
   category: String,
   favoritesList: Array,

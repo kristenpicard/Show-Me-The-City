@@ -12,19 +12,21 @@ import {
 import { useAuth } from "../contexts/AuthContext";
 import API from "../utils/API";
 
+const style = {
+  overflowX: 'scroll'
+}
+
 const Profile = () => {
 
   const [error, setError] = useState("");
   const { currentUser } = useAuth();
   const [photo, setPhoto] = useState("https://via.placeholder.com/300x175");
   const [data, setData] = useState([]);
-  // console.log(currentUser);
 
   useEffect(() => {
     API.getPostsByUser(currentUser.uid)
     .then(res => {
       setData(res.data)
-      console.log(res.data)
     })
   }, [currentUser])
 
@@ -46,7 +48,7 @@ const Profile = () => {
           My Recommendations
         </ProfileHeader>
         <div className="container">
-          <div className="row flex-row flex-nowrap">
+          <div style={style} className="row flex-row flex-nowrap">
             <div className="col">
               <CreateCard className="card text-center">
                 <Link to={{ pathname: "/create", photo: { photo } }}>
@@ -54,8 +56,12 @@ const Profile = () => {
                 </Link>
               </CreateCard>
             </div>
-            {/* Pseudo code to map recs!!!!! See RecCard also */}
+
+           
+    
               { data.length ? data.map ( x => <RecCard data={x} /> ) : <div> Loading... </div> }
+
+
           </div>
         </div>
         <ProfileHeader classNameName="text-center">My Favorites</ProfileHeader>

@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, { useRef } from "react";
 import { useHistory } from "react-router-dom";
 import {
   Center,
@@ -16,45 +16,39 @@ const styleLink = {
 };
 
 function Landing(props) {
-  const history=useHistory();
+  const history = useHistory();
 
   const locationRef = useRef();
 
   function handleClick() {
     props.setLocation(locationRef.current.value);
-    history.push("/home")
+    history.push("/home");
   }
 
   return (
     <LandContainer className="text-center">
-      
       <Opacity>
         <Center>
           <header>
             <H1>
               Show Me
-              <br/>
+              <br />
               the City
             </H1>
           </header>
-          <br/>
+          <br />
           <input
-            // search={this.state.search}
-            // handleInputChange={this.handleInputChange}
-            // handleFormSubmit={this.handleFormSubmit}
             ref={locationRef}
             style={style}
             className="searchBox"
             type="text"
             placeholder="Search for a city..."
             name="search"
-            // onKeyDown={(e) => e.key === "Enter" && onKeyDown}
           ></input>
-          <button
-          onClick={handleClick}
-          >Search
-          </button>
-          <br/><br/><br/>          
+          <button onClick={handleClick}>Search</button>
+          <br />
+          <br />
+          <br />
           <a style={styleLink} href="/login">
             Login or Sign Up
           </a>

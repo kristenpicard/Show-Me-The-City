@@ -79,6 +79,29 @@ export const GeneralContainer = styled.div`
   padding-top: 2%;
 `;
 
+// This is a container used on many "views" of the app with same background color and padding
+export const LoginContainer = styled.div`
+  // padding: 8%;
+  padding-top: 2%;
+
+  @media ${device.tablet} {
+    max-width: 800px;
+  }
+
+  @media ${device.laptop} {
+    width: 800px;
+  }
+
+  @media ${device.desktop} {
+    width: 800px;
+  }
+`;
+
+export const GoogleLoginButtonContainer = styled.div`
+  text-align: center;
+  padding-top: 15px;
+`;
+
 // Styles the Navbar
 export const Nav = styled.nav`
   background-color: #393e46;
@@ -92,6 +115,7 @@ export const Nav = styled.nav`
 export const TopSearch = styled.div`
   font-family: "PT Serif Caption", "serif";
   font-weight: 400;
+  padding-left: 4%;
 `;
 
 // Styles Title on Home page
