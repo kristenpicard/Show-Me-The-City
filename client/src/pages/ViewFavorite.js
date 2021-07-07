@@ -1,7 +1,6 @@
 import React from "react";
 import NavBar from "../components/NavBar/index";
 import {
-  BackToProfile,
   EditBtn,
   Fave,
   ImgRec,
@@ -10,28 +9,30 @@ import {
   RecTitle,
   ViewContainer,
 } from "../components/styling/style";
+import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import bbqImage from "../images/bbqplaceholder.png";
+import Container from 'react-bootstrap/Container';
 
 const ViewFavorite = () => {
   return (
     <>
       <NavBar />
       <ViewContainer>
-        <BackToProfile>
-          <a href="backapage">Back to Profile</a>
-        </BackToProfile>
-        <div className="container">
+      <Breadcrumb>
+        <Breadcrumb.Item href="backapage">Back to Profile</Breadcrumb.Item>
+        </Breadcrumb>
+         <Container> 
+          <div className="container">
           <br></br>
           <ImgRec src={bbqImage} alt="bbq"></ImgRec>
           <RecContainer>
             <br></br>
             <div className="row text-center">
-              <RecTitle className="col">Best BBQ!</RecTitle>
-              <Fave href="test" className="col">
-                500 ✰
-              </Fave>
+            <RecTitle className="col">Best BBQ!</RecTitle>
+            <Fave href="test" className="col">
+              500 ✰
+            </Fave>
             </div>
-
             <RecBody className="container">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
@@ -46,6 +47,7 @@ const ViewFavorite = () => {
             </RecBody>
           </RecContainer>
         </div>
+        </Container>
       </ViewContainer>
     </>
   );
