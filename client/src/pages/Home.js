@@ -1,3 +1,4 @@
+import { PromiseProvider } from "mongoose";
 import React, { useState } from "react";
 import CardCarousel from "../components/CardCarousel";
 import NavBar from "../components/NavBar";
@@ -21,9 +22,9 @@ const Home = (props) => {
         <NavBar isProfile={false} login={login} /> : <NavBar isProfile={false} profile={profile} logout={logoutLink} />
       }
 
-      <SearchBox city={city} setCity={setCity}/>
+      <SearchBox location={props.location} setLocation={props.setLocation}/>
       <GeneralContainer className="text-center">
-        <SortResults />
+        <SortResults location={props.location}/>
         <CardCarousel location={props.location} setLocation={props.setLocation}/>
       </GeneralContainer>
     </>
