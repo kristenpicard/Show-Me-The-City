@@ -57,8 +57,6 @@ const Profile = () => {
               </CreateCard>
             </div>
 
-           
-    
               { data.length ? data.map ( x => <RecCard data={x} /> ) : <div> Loading... </div> }
 
 
