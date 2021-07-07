@@ -52,7 +52,7 @@ function EditForm(props) {
         ref={locationRef}
         className="col-12 form-group"
         type="text"
-        placeholder="Will be value.city"
+        value={props.location}
       />
       <div className="form-group">
         <div class="dropdown">
@@ -81,26 +81,16 @@ function EditForm(props) {
         </div>
       </div>
       <label>Headline: </label>
-      <input ref={titleRef} className="col-12 form-group" type="text" placeholder="Will be value.headline" />
+      <input ref={titleRef} className="col-12 form-group" type="text" value={props.title} />
       <div className="form-group">
         <label>Short Intro: </label>
         <TextArea
           ref={synopsisRef}
           className="form-control"
           type="text"
-          placeholder="Will be value.intro"
-        />
+          value={props.synopsis}        />
       </div>
-      <div className="form-group">
-        <label>List: </label>
-        <div className="form-row">
-          <input className="form-group col-1" type="text" />
-          <div>&nbsp;&nbsp;</div>
-          <input className="form-group col" type="text" placeholder="Will be value.list[0]" />
-        </div>
-
-        <button className="btn btn-small col-1.5">Add</button>
-      </div>
+     
     <div className="text-center">
         <Button type="submit">Save</Button>
       </div>

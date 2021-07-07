@@ -13,6 +13,7 @@ import {
 } from "../components/styling/style";
 import bbqImage from "../images/bbqplaceholder.png";
 import API from "../utils/API"
+import {Link} from "react-router-dom";
 
 const ViewRec = (props) => {
   console.log(props.location.rec.recID);
@@ -20,7 +21,10 @@ const ViewRec = (props) => {
 console.log(props.location)
 
 const [data, setData] = useState([]);
-
+let image = data.image;
+let title = data.title;
+let synopsis = data.synopsis;
+let location = data.location;
 
   useEffect(() => {
     API.getPost(recID)
@@ -29,6 +33,7 @@ const [data, setData] = useState([]);
       console.log(res)
     })
   }, [recID])
+  
 
   return (
     <>
@@ -55,7 +60,7 @@ const [data, setData] = useState([]);
               </p>
 
               <div className="row text-center">
-                <EditBtn className="col">Edit</EditBtn>
+                <EditBtn className="col"><Link to={{pathname: "/edit", recID: {recID}, image: {image}, title: {title}, synopsis:{synopsis}, location:{location}}}>Edit</Link></EditBtn>
                 <DelBtn className="col">Delete</DelBtn>
               </div>
             </RecBody>
