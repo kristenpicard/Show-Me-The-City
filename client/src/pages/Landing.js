@@ -12,7 +12,12 @@ const style = {
 };
 
 const styleLink = {
-  color: "white",
+  // color: "white",
+  // text-decoration-line: underline;
+  textDecorationLine: "underline",
+  textDecorationStyle: "solid",
+  textDecorationColor: "white",
+  color: "white"
 };
 
 function Landing(props) {
