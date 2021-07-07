@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { RecCardStyling } from "../styling/style";
 
 function RecCard(props) {
-  console.log(props);
   const recID = props.data._id;
   const data = props.data;
   const setData = props.setData;
@@ -12,7 +11,20 @@ function RecCard(props) {
     <>
       <div className="col">
         <RecCardStyling className="card text-center">
-          <Link to={{pathname: "/view-recommendation", rec: {recID}, data:{data}, setData:{setData}, location:{location}}}>{props.data.title}!</Link>
+          <Link
+            to={{
+              pathname: "/view-recommendation",
+              rec: { recID },
+              data: { data },
+              setData: { setData },
+              location: { location },
+            }}
+          >
+            {props.data.title}!
+            <br></br>
+            <br></br>
+         
+          </Link>
           <br></br>
           {/* {props.favorites} ✰ */}
         </RecCardStyling>

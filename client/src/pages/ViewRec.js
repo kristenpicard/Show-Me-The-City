@@ -1,4 +1,5 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar/index";
 import {
   BackToProfile,
@@ -11,29 +12,28 @@ import {
   RecTitle,
   ViewContainer,
 } from "../components/styling/style";
-import bbqImage from "../images/bbqplaceholder.png";
-import API from "../utils/API"
-import {Link} from "react-router-dom";
+import API from "../utils/API";
+
+const style = {
+  overflow: "auto",
+  maxHeight: "20px",
+};
 
 const ViewRec = (props) => {
-  console.log(props.location.rec.recID);
   const recID = props.location.rec.recID;
-console.log(props.location)
 
-const [data, setData] = useState([]);
-let image = data.image;
-let title = data.title;
-let synopsis = data.synopsis;
-let location = data.location;
+  const [data, setData] = useState([]);
+  let image = data.image;
+  let title = data.title;
+  let synopsis = data.synopsis;
+  let location = data.location;
 
   useEffect(() => {
-    API.getPost(recID)
-    .then(res => {
-      setData(res.data)
-      console.log(res)
-    })
-  }, [recID])
-  
+    API.getPost(recID).then((res) => {
+      setData(res.data);
+      console.log(res);
+    });
+  }, [recID]);
 
   return (
     <>
@@ -55,12 +55,23 @@ let location = data.location;
             </div>
 
             <RecBody className="container">
-              <p>
-                {data.synopsis}
-              </p>
+              <p styl={style}>{data.synopsis}</p>
 
               <div className="row text-center">
-                <EditBtn className="col"><Link to={{pathname: "/edit", recID: {recID}, image: {image}, title: {title}, synopsis:{synopsis}, location:{location}}}>Edit</Link></EditBtn>
+                <EditBtn className="col">
+                  <Link
+                    to={{
+                      pathname: "/edit",
+                      recID: { recID },
+                      image: { image },
+                      title: { title },
+                      synopsis: { synopsis },
+                      location: { location },
+                    }}
+                  >
+                    Edit
+                  </Link>
+                </EditBtn>
                 <DelBtn className="col">Delete</DelBtn>
               </div>
             </RecBody>

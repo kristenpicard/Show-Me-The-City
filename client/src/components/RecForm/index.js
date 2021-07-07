@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
+import { useAuth } from "../../contexts/AuthContext";
 import API from "../../utils/API";
 import Cloudinary from "../Cloudinary";
 import { Button, TextArea } from "../styling/style";
-import { useAuth } from "../../contexts/AuthContext";
 
 // Form for a user to add a recommendation/post
 function RecForm(props) {
@@ -17,14 +17,14 @@ function RecForm(props) {
   // created a variable and on load it is empty - default to empty
   let selectedCategory = "";
 
-  // This function is taking the selected option and setting it 
+  // This function is taking the selected option and setting it
   // to a variable to be use in the post of the handleSubmit
   const handleSelect = (e) => {
     selectedCategory = e;
   };
 
   // add method to pass to Cloudinary - return state (value) of child component
-  
+
   // or keep photo state here in parent element & pass handler to child
 
   const handleSubmit = (e) => {
@@ -35,7 +35,7 @@ function RecForm(props) {
       synopsis: synopsisRef.current.value,
       category: selectedCategory,
       image: photo,
-      userID: user.currentUser.uid
+      userID: user.currentUser.uid,
     })
       .then((res) => {
         console.log(user);
@@ -51,9 +51,7 @@ function RecForm(props) {
   return (
     <form onSubmit={handleSubmit}>
       <div className="form-group text-center">
-        <Cloudinary photo={props.photo} setPhoto={props.setPhoto}/>
-        {/* <Button type="file" onClick={Cloudinary.handleChangeEvent}>Add a Photo</Button> */}
-        
+        <Cloudinary photo={props.photo} setPhoto={props.setPhoto} />
       </div>
 
       <label>City: </label>
@@ -64,7 +62,6 @@ function RecForm(props) {
         placeholder="Enter City"
       />
       <div className="form-group">
-
         <DropdownButton
           className="DDButton"
           alignRight
@@ -73,14 +70,14 @@ function RecForm(props) {
           // This is the event listener which calls handleSelect when option is chosen
           onSelect={handleSelect}
         >
-          <Dropdown.Item eventKey="option-1">Art & Culture</Dropdown.Item>
-          <Dropdown.Item eventKey="option-2">Bars</Dropdown.Item>
-          <Dropdown.Item eventKey="option-3">Cinema</Dropdown.Item>
-          <Dropdown.Item eventKey="option-4">Coffee & Tea</Dropdown.Item>
-          <Dropdown.Item eventKey="option-5">Music</Dropdown.Item>
-          <Dropdown.Item eventKey="option-6">Landmarks</Dropdown.Item>
-          <Dropdown.Item eventKey="option-7">Restaurants</Dropdown.Item>
-          <Dropdown.Item eventKey="option-8">Shopping</Dropdown.Item>
+          <Dropdown.Item eventKey="art">Art & Culture</Dropdown.Item>
+          <Dropdown.Item eventKey="bars">Bars</Dropdown.Item>
+          <Dropdown.Item eventKey="cinema">Cinema</Dropdown.Item>
+          <Dropdown.Item eventKey="coffee">Coffee & Tea</Dropdown.Item>
+          <Dropdown.Item eventKey="music">Music</Dropdown.Item>
+          <Dropdown.Item eventKey="landmarks">Landmarks</Dropdown.Item>
+          <Dropdown.Item eventKey="restaurants">Restaurants</Dropdown.Item>
+          <Dropdown.Item eventKey="shopping">Shopping</Dropdown.Item>
         </DropdownButton>
       </div>
 

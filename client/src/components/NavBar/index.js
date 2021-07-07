@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Nav } from "../styling/style";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 
 function NavBar(props) {

@@ -1,18 +1,17 @@
 import React from "react";
 import {
-  DelBtn,
-  EditBtn,
   Fave,
   ImgRec,
   RecBody,
   RecContainer,
   RecTitle,
 } from "../styling/style";
-import bbqImage from "../../images/bbqplaceholder.png";
+
+const style = {
+  overflow: "auto",
+};
 
 function HomeCard(props) {
-  console.log(props);
-
   return (
     <>
       <div className="carousel-item active">
@@ -29,10 +28,9 @@ function HomeCard(props) {
             </div>
 
             <RecBody className="container">
-              <p>
-              {props.data.synopsis}
-              </p>
-
+              <div style={style}>
+                <p>{props.data.synopsis}</p>
+              </div>
             </RecBody>
           </RecContainer>
         </div>
