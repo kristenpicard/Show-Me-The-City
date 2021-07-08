@@ -57,3 +57,6 @@ p {
   background-color: #ecf0f1;
   border-radius: 0.25rem;
 }
+.input-group{
+  width:50%;
+}
