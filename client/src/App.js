@@ -16,7 +16,7 @@ import ViewRec from "./pages/ViewRec";
 
 function App() {
 
-  const [location, setLocation] = useState("");
+  const [location, setLocation] = useState("New York City, NY");
 
   return (
     <div>
