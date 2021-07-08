@@ -1,19 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CardCarousel from "../components/CardCarousel";
 import NavBar from "../components/NavBar";
 import SearchBox from "../components/SearchBox";
 import SortResults from "../components/SortResults";
 import { GeneralContainer } from "../components/styling/style";
 import { useAuth } from "../contexts/AuthContext";
+import API from "../utils/API";
 
 const Home = (props) => {
 
+  const [selectedCategory, setSelectedCategory] = useState("");
   const [city, setCity] = useState("");
   const { currentUser, logout } = useAuth();
+  const [data, setData] = useState([]);
 
   const login = "/login";
   const profile = "/profile";
   const logoutLink = "/";
+
+  useEffect(() => {
+    API.getPostsByCategory(props.location, selectedCategory)
+    .then(res => {
+      console.log(res);
+      setData(res.data)
+      
+    })
+  }, [selectedCategory])
+
+  useEffect(() => {
+    API.getPostsByLocation(props.location).then((res) => {
+      setData(res.data);
+    });
+  }, [props.location]);
 
   return (
     <>
@@ -22,8 +40,8 @@ const Home = (props) => {
       }
       <SearchBox location={props.location} setLocation={props.setLocation}/>
       <GeneralContainer className="text-center">
-        <SortResults location={props.location}/>
-        <CardCarousel location={props.location} setLocation={props.setLocation}/>
+        <SortResults selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} location={props.location}/>
+        <CardCarousel data={data} />
       </GeneralContainer>
     </>
   );

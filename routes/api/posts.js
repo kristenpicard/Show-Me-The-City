@@ -18,6 +18,11 @@ router
   .route("/loc/:location")
   .get(postController.findByLocation);
 
+// Matches with "/api/posts/:location/:category"
+router
+  .route("/loc/:location/:category")
+  .get(postController.findByCategory);
+
 // Matches with "/api/posts/:userID"
 router
   .route("/user/:userID")

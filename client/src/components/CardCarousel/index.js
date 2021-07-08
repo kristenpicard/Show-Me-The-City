@@ -9,14 +9,8 @@ const style = {
 };
 
 const CardCarousel = (props) => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    API.getPostsByLocation(props.location).then((res) => {
-      setData(res.data);
-    });
-  }, [props.location]);
-
+  const data = props.data;
+  console.log(data);
   return (
     // <div style={style}>
     //   <div
