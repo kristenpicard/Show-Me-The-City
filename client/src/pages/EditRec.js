@@ -4,7 +4,7 @@ import NavBar from "../components/NavBar/index";
 import { BackToProfile, GeneralContainer } from "../components/styling/style";
 
 const EditRec = (props) => {
-  const [photo, setPhoto] = useState("https://via.placeholder.com/300x175");
+  const [photo, setPhoto] = useState(props.location.image.image);
   const recID = props.location.recID.recID;
   const title = props.location.title.title;
   const image = props.location.image.image;
