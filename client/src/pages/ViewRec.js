@@ -37,8 +37,11 @@ const ViewRec = (props) => {
   }, [recID]);
 
   function handleDelete() {
-    API.deletePost(recID)
-    .then(history.push("/profile"))
+    if(window.confirm("Are you sure you want to delete this recommendation?")) {
+      API.deletePost(recID)
+      .then(history.push("/profile"))
+    }
+    
   }
 
   return (
