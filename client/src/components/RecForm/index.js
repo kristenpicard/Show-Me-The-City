@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
+import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import API from "../../utils/API";
 import Cloudinary from "../Cloudinary";
@@ -14,6 +15,7 @@ function RecForm(props) {
   const synopsisRef = useRef();
   const photo = props.photo;
   const user = useAuth();
+  const history = useHistory();
   // created a variable and on load it is empty - default to empty
   let selectedCategory = "";
 
@@ -29,7 +31,7 @@ function RecForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (titleRef === "") return; 
+    if (titleRef === "") return;
     API.createPost({
       title: titleRef.current.value,
       location: locationRef.current.value,
@@ -37,10 +39,14 @@ function RecForm(props) {
       category: selectedCategory,
       image: photo,
       userID: user.currentUser.uid,
+      
     })
       .then((res) => {
         console.log(user);
-        console.log(res);
+        console.log(res.data._id);
+        history.push('/profile',
+    
+        ); 
       })
       .catch((err) => console.log(err));
 
@@ -50,7 +56,7 @@ function RecForm(props) {
   };
 
   return (
-    <form >
+    <form>
       <div className="form-group text-center">
         <Cloudinary photo={props.photo} setPhoto={props.setPhoto} />
       </div>
@@ -100,7 +106,10 @@ function RecForm(props) {
         />
       </div>
       <div className="text-center">
-        <Button onClick={handleSubmit}>Submit</Button>
+        <Button onClick={handleSubmit}>
+       
+            Submit
+        </Button>
       </div>
     </form>
   );
