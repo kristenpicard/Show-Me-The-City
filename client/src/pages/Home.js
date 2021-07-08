@@ -20,7 +20,6 @@ const Home = (props) => {
       {!currentUser ? 
         <NavBar isProfile={false} login={login} /> : <NavBar isProfile={false} profile={profile} logout={logoutLink} />
       }
-
       <SearchBox location={props.location} setLocation={props.setLocation}/>
       <GeneralContainer className="text-center">
         <SortResults location={props.location}/>
