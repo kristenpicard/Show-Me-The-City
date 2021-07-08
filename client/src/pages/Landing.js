@@ -6,14 +6,16 @@ import {
   LandContainer,
   Opacity,
 } from "../../src/components/styling/style";
+import InputGroup from 'react-bootstrap/InputGroup';
+import FormControl from 'react-bootstrap/FormControl';
+import Button from 'react-bootstrap/Button';
+import { FaSearch } from "react-icons/fa";
 
 const style = {
   opacity: ".7",
 };
 
 const styleLink = {
-  // color: "white",
-  // text-decoration-line: underline;
   textDecorationLine: "underline",
   textDecorationStyle: "solid",
   textDecorationColor: "white",
@@ -42,15 +44,21 @@ function Landing(props) {
             </H1>
           </header>
           <br />
-          <input
-            ref={locationRef}
-            style={style}
-            className="searchBox"
-            type="text"
-            placeholder="Search for a city..."
-            name="search"
-          ></input>
-          <button onClick={handleClick}>Search</button>
+          <div className="d-flex justify-content-center">
+          <InputGroup className="mb-3">
+            <FormControl
+              ref={locationRef}
+              style={style}
+              className="searchBox"
+              type="text"
+              placeholder="Search for a city..."
+              name="search"
+            />
+            <InputGroup.Append>
+              <Button variant="outline-secondary" onClick={handleClick}><FaSearch /></Button>
+            </InputGroup.Append>
+          </InputGroup>
+          </div>
           <br />
           <br />
           <br />
