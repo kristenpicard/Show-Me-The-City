@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
-import { InputGroup } from "react-bootstrap";
+import { FormControl, InputGroup } from "react-bootstrap";
 import { TopSearch } from "../styling/style";
+import { FaSearch } from "react-icons/fa";
+import Button from 'react-bootstrap/Button';
 
 const style = {
   fontFamily: "Hind Siliguri",
@@ -15,18 +17,21 @@ const SearchBox = (props) => {
   }
   return (
     <TopSearch>
-      <InputGroup style={style} className="mb-3">
-        <input
-          className="col-9"
-          placeholder="Search new city..."
+    <div className="d-flex justify-content-center">
+      <InputGroup className="mb-3">
+        <FormControl
           ref={locationRef}
+          style={style}
+          className="searchBox"
+          type="text"
+          placeholder="Search new city..."
+          name="search"
         />
         <InputGroup.Append>
-          <button onClick={handleClick} id="basic-addon2">
-            Search
-          </button>
+        <Button variant="outline-secondary" onClick={handleClick}><FaSearch /></Button>
         </InputGroup.Append>
       </InputGroup>
+      </div>
     </TopSearch>
   );
 };
