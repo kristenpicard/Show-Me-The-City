@@ -7,10 +7,16 @@ import { Button, TextArea } from "../styling/style";
 
 // Form for a user to add a recommendation/post
 function EditForm(props) {
+  
+  console.log(props);
   const locationRef = useRef();
   const titleRef = useRef();
   const synopsisRef = useRef();
   const photo = props.photo;
+
+  let location = props.location;
+  let title = props.title;
+  let synopsis = props.synopsis;
   // created a variable and on load it is empty - default to empty
   let selectedCategory = "";
 
@@ -24,12 +30,25 @@ function EditForm(props) {
 
   // or keep photo state here in parent element & pass handler to child
 
+  function updateCity() {
+    location = locationRef.current.value;
+  }
+
+  function updateTitle() {
+    title = titleRef.current.value;
+  }
+
+  function updateSynopsis() {
+    synopsis = synopsisRef.current.value;
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    API.updatePost({
-      title: titleRef.current.value,
-      location: locationRef.current.value,
-      synopsis: synopsisRef.current.value,
+    API.updatePost(props.recID, {
+      
+      title: title,
+      location: location,
+      synopsis: synopsis,
       category: selectedCategory,
       image: photo,
     })
@@ -43,14 +62,15 @@ function EditForm(props) {
   return (
     <form className="new-review-form" onSubmit={handleSubmit}>
       <div className="form-group text-center">
-        <Cloudinary photo={props.photo} setPhoto={props.setPhoto} />
+        <Cloudinary photo={photo} setPhoto={props.setPhoto} />
       </div>
       <label>City: </label>
       <input
         ref={locationRef}
         className="col-12 form-group"
         type="text"
-        value={props.location}
+        placeholder={props.location}
+        onChange={updateCity}
       />
 
       <div className="form-group">
@@ -78,7 +98,8 @@ function EditForm(props) {
         ref={titleRef}
         className="col-12 form-group"
         type="text"
-        value={props.title}
+        placeholder={props.title}
+        onChange={updateTitle}
       />
       <div className="form-group">
         <label>Short Intro: </label>
@@ -86,7 +107,8 @@ function EditForm(props) {
           ref={synopsisRef}
           className="form-control"
           type="text"
-          value={props.synopsis}
+          placeholder={props.synopsis}
+          onChange={updateSynopsis}
         />
       </div>
 

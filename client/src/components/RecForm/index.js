@@ -29,6 +29,7 @@ function RecForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (titleRef === "") return; 
     API.createPost({
       title: titleRef.current.value,
       location: locationRef.current.value,
@@ -49,7 +50,7 @@ function RecForm(props) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form >
       <div className="form-group text-center">
         <Cloudinary photo={props.photo} setPhoto={props.setPhoto} />
       </div>
@@ -99,7 +100,7 @@ function RecForm(props) {
         />
       </div>
       <div className="text-center">
-        <Button type="submit">Submit</Button>
+        <Button onClick={handleSubmit}>Submit</Button>
       </div>
     </form>
   );

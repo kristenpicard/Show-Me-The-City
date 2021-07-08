@@ -24,7 +24,7 @@ export default {
     return axios.post("/api/posts", postData);
   },
   // Updates the post with the given id
-  updatePost: function(id) {
-    return axios.put("/api/posts/" + id);
+  updatePost: function(id, body) {
+    return axios.put("/api/posts/" + id, body);
   },
 };
