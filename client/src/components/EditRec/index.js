@@ -4,6 +4,8 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import API from "../../utils/API";
 import Cloudinary from "../Cloudinary";
 import { Button, TextArea } from "../styling/style";
+import { Link, useHistory } from "react-router-dom";
+
 
 // Form for a user to add a recommendation/post
 function EditForm(props) {
@@ -13,6 +15,7 @@ function EditForm(props) {
   const titleRef = useRef();
   const synopsisRef = useRef();
   const photo = props.photo;
+  const history = useHistory();
 
   let location = props.location;
   let title = props.title;
@@ -52,7 +55,9 @@ function EditForm(props) {
       category: selectedCategory,
       image: photo,
     })
-      .then((res) => {})
+      .then((res) => { history.push('/profile',
+    
+      ); })
       .catch((err) => console.log(err));
 
     titleRef.current.value = "";

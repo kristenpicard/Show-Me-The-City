@@ -12,6 +12,9 @@ export default {
   getPostsByLocation: function(location) {
     return axios.get("/api/posts/loc/" + location);
   },
+  getPostsByCategory: function(location, category) {
+    return axios.get("/api/posts/loc/" + location + "/" + category);
+  },
   getPostsByUser: function(userID) {
     return axios.get("/api/posts/user/" + userID);
   },

@@ -14,6 +14,12 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => console.log(err.message));
   },
+  findByCategory: function(req, res) {
+    console.log(req);
+    db.Recs.find({location: req.params.location, category: req.params.category})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => console.log(err.message));
+  },
   findById: function(req, res) {
     db.Recs.findById(req.params.id)
       .then(dbModel => res.json(dbModel))

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import NavBar from "../components/NavBar/index";
 import {
   BackToProfile,
@@ -21,6 +21,7 @@ const style = {
 
 const ViewRec = (props) => {
   const recID = props.location.rec.recID;
+  const history = useHistory();
 
   const [data, setData] = useState([]);
   let image = data.image;
@@ -34,6 +35,14 @@ const ViewRec = (props) => {
       console.log(res);
     });
   }, [recID]);
+
+  function handleDelete() {
+    if(window.confirm("Are you sure you want to delete this recommendation?")) {
+      API.deletePost(recID)
+      .then(history.push("/profile"))
+    }
+    
+  }
 
   return (
     <>
@@ -72,7 +81,7 @@ const ViewRec = (props) => {
                     Edit
                   </Link>
                 </EditBtn>
-                <DelBtn className="col">Delete</DelBtn>
+                <DelBtn className="col" onClick={handleDelete}>Delete</DelBtn>
               </div>
             </RecBody>
           </RecContainer>
