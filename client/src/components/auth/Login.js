@@ -49,7 +49,7 @@ export default function Login() {
             </Button>
             <GoogleLoginButtonContainer>
               <GoogleLoginButton onClick={googleLogin}>
-                <span>Log In With Google</span>
+                <span className="d-flex justify-content-center">Log In With Google</span>
               </GoogleLoginButton>
             </GoogleLoginButtonContainer>
           </Form>
