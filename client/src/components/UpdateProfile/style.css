@@ -28,6 +28,7 @@ h2 {
   background-color: #393e46;
   font-family: inherit;
   font-size: inherit;
+  border-radius: 8px;
 }
 p {
   font-size: 1rem;
@@ -59,4 +60,7 @@ p {
 }
 .input-group{
   width:50%;
+}
+.GoogleLoginButton {
+  text-align: center;
 }

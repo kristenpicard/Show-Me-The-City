@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Form } from "react-bootstrap";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
-import { DDButton, HomeTitle, Input } from "../styling/style";
+import {HomeTitle} from "../styling/style";
 
 const style = {
   fontFamily: "Hind Siliguri",
@@ -18,18 +18,10 @@ const SortResults = (props) => {
     <>
       <HomeTitle>Showing local favorites in {props.location}</HomeTitle>
       <Form style={style}>
-        <Form.Group>
-          <Input
-            className="col-12 input"
-            type="text"
-            placeholder="Search for an interest..."
-          ></Input>
-        </Form.Group>
-        <div className="row form-group">
-        <div className="form-group">
+        <div className="d-flex justify-content-center">
         <DropdownButton
           className="DDButton"
-          alignRight
+          alignCenter
           title="Category"
           id="dropdownMenuButton"
           // This is the event listener which calls handleSelect when option is chosen
@@ -45,26 +37,6 @@ const SortResults = (props) => {
           <Dropdown.Item eventKey="shopping">Shopping</Dropdown.Item>
         </DropdownButton>
       </div>
-          </div>
-
-          <div className="dropdown col">
-            <DDButton
-              className="btn btn-secondary dropdown-toggle"
-              type="button"
-              id="dropdownMenuButton"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              {" "}
-              Rating
-            </DDButton>
-            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a className="dropdown-item" href="/">{`< 100`}</a>
-              <a className="dropdown-item" href="/">{`< 250`}</a>
-              <a className="dropdown-item" href="/">{`> 500`}</a>
-            </div>
-          </div>
       </Form>
     </>
   );
